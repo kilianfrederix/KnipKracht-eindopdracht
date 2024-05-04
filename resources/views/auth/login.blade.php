@@ -36,6 +36,9 @@
                     <input type="submit" value="Login">
                 </div>
             </div>
+            @section('footer')
+
+            @endsection
         </form>
     </section>
 @endsection

@@ -8,7 +8,7 @@
 
         <!-- Placeholder content -->
         <p>Welcome to the customer dashboard!</p>
-        <p>Here you can view your appointments, update your profile, and perform other customer-related tasks.</p>
+        <p>Here you can view your appointments, update your profile,</p>
     </div>
 @endsection
 

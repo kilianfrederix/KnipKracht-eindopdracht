@@ -37,7 +37,7 @@
 
         <footer class="main-footer">
             @auth
-                <p>Made with Laravel! Welcome {{ Auth::user()->username }}</p>
+                <p>Made with Laravel! Welcome {{ Auth::user()->username }} {{ Auth::user()->is_employee }}</p>
             @endauth
         </footer>
     </div>
