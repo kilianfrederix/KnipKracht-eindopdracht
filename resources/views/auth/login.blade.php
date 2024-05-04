@@ -1,15 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.default')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@section('title', 'Login')
 
-<body>
+@section('content')
+    <section>
+        <h2>Login</h2>
 
-</body>
+        <p>
+            <a href="{{ route('register.get') }}">Or register for a new account</a>
+        </p>
 
-</html>
+        <form action="{{ route('login.post') }}" method="post">
+            @csrf
+            <div class="form-content">
+                <div class="form-element">
+                    <div>
+                        <label for="username">Username</label>
+                        @error('username')
+                            <div class="form-error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <input type="text" name="username" id="username" value="{{ old('username') }}">
+                </div>
+                <div class="form-element">
+                    <div>
+                        <label for="password">Password</label>
+                        @error('password')
+                            <div class="form-error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div>
+                    <input type="submit" value="Login">
+                </div>
+            </div>
+        </form>
+    </section>
+@endsection
+
