@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeController extends Controller
 {
     // Methode voor het weergeven van het werknemersdashboard
     public function dashboard()
     {
-        // Hier kun je logica toevoegen om gegevens op te halen die je wilt weergeven op het werknemersdashboard
-        // Voorbeeld: $appointments = Appointment::where('employee_id', Auth::id())->get();
-
-        // Geef het werknemersdashboardview terug, eventueel met gegevens
-        return view('employee.dashboard');
+        // Controleer of de gebruiker een werknemer is
+        if (Auth::check() && Auth::user()->is_employee) {
+            // Gebruiker is een werknemer, toon het werknemersdashboard
+            return view('employee.dashboard');
+        } else {
+            // Gebruiker is geen werknemer, stuur ze naar de homepagina of een andere gewenste locatie
+            return redirect()->route('Home.home');
+        }
     }
 }

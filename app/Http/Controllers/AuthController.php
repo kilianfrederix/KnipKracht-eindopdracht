@@ -28,7 +28,7 @@ class AuthController extends Controller
                 return redirect()->route('employee.dashboard');
             } else {
                 // Als de gebruiker een klant is, stuur ze naar het dashboard voor klanten
-                return redirect()->route('customer.dashboard');
+                return redirect()->route('home');
             }
         }
 

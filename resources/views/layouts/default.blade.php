@@ -19,8 +19,6 @@
                     <a href="{{ route('logout') }}">Logout</a>
                     @if(Auth::user()->is_employee)
                         <a href="{{ route('employee.dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('customer.dashboard') }}">Dashboard</a>
                     @endif
                 @endauth
             </nav>
@@ -32,7 +30,7 @@
 
         <footer class="main-footer">
             @auth
-                <p>Made with Laravel! Welcome {{ Auth::user()->username }} {{ Auth::user()->is_employee }}</p>
+                <p>Welcome {{ Auth::user()->username }} {{ Auth::user()->is_employee }}</p>
             @endauth
         </footer>
     </div>
