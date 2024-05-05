@@ -15,8 +15,19 @@ class EmployeeController extends Controller
             // Gebruiker is een werknemer, toon het werknemersdashboard
             return view('employee.dashboard');
         } else {
-            // Gebruiker is geen werknemer, stuur ze naar de homepagina of een andere gewenste locatie
+            // Gebruiker is geen werknemer, stuur ze naar de homepagina
             return redirect()->route('Home.home');
         }
+    }
+
+    public function klanten()
+    {
+        return view('employee.klanten');
+    }
+
+
+    public function berichten()
+    {
+        return view('employee.berichten');
     }
 }

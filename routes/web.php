@@ -12,6 +12,8 @@ Route::middleware(['auth'])->group(function () {
 
     // De route voor het werknemersdashboard behouden
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
+    Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
+    Route::get('/employee/berichten', [EmployeeController::class, 'berichten'])->name('employee.berichten');
 
     // De standaard homepagina
     Route::get('/home', [HomeController::class, 'index'])->name('home');
