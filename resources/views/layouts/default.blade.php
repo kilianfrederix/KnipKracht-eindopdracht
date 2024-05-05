@@ -13,21 +13,16 @@
 
     <div class="container">
         <header>
-            <h1>Databank communicatie</h1>
             <nav class="main-nav">
                 @auth
+                    <a href="/">Home</a>
+                    <a href="{{ route('logout') }}">Logout</a>
                     @if(Auth::user()->is_employee)
                         <a href="{{ route('employee.dashboard') }}">Dashboard</a>
                     @else
                         <a href="{{ route('customer.dashboard') }}">Dashboard</a>
                     @endif
-                    <a href="{{ route('logout') }}">Logout</a>
                 @endauth
-                @guest
-                    <a href="/">Home</a>
-                    <a href="{{ route('login.get') }}">Login</a>
-                    <a href="{{ route('register.get') }}">Register</a>
-                @endguest
             </nav>
         </header>
 
