@@ -39,6 +39,7 @@
             </div>
         </footer>
     </div>
+<script src="{{ asset('javascript/afspraken.js') }}"></script>
 
 </body>
 

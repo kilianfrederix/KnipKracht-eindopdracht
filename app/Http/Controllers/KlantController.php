@@ -14,7 +14,7 @@ class KlantController extends Controller
         return view('klanten.show', compact('klant', 'afspraken'));
     }
 
-    public function klanten()
+    public function index()
     {
         $klanten = Klant::all();
 

@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Route;
 // De route's voor het werknemersdashboard
 Route::middleware(['auth'])->group(function () {
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
-    Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
+    // Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
     Route::get('/employee/berichten', [EmployeeController::class, 'berichten'])->name('employee.berichten');
-    Route::get('employee/klanten', [KlantController::class, 'klanten'])->name('employee.klanten');
-    Route::get('/employee/klant/{id}', [KlantController::class, 'show'])->name('klanten.show');
+    Route::get('/klanten/{id}', [KlantController::class, 'show'])->name('klanten.show');
+    Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
 });
 
 // De standaard homepagina
@@ -22,6 +22,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Afspraak route
 Route::get('/afspraak', [AfspraakController::class, 'afspraak'])->name('afspraak.get');
 Route::post('/afspraak/opslaan', [AfspraakController::class, 'opslaan'])->name('afspraak.opslaan');
+Route::post('/save-customer-data', [KlantController::class, 'save'])->name('save_customer_data');
+Route::get('/afspraak/bedankt', function () {
+    return view('afspraak.bedankt');
+})->name('afspraak.bedankt');
+
 
 Route::get('/afspraak/afsprakenShow/{id}', [KlantController::class, 'show']);
 

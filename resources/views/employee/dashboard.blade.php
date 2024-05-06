@@ -9,7 +9,7 @@
                 <h2>Sidebar</h2>
                 <ul>
                     <li><a href="{{ route('employee.dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ route('employee.klanten') }}">Klanten</a></li>
+                    <li><a href="{{ route('klanten.index') }}">Klanten</a></li>
                     <li><a href="{{ route('employee.berichten') }}">Berichten</a></li>
                     <li>Item 4</li>
                 </ul>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kapper extends Model
 {
-    protected $fillable = ['naam', 'email', 'telefoon'];
+    protected $fillable = ['naam', 'email', 'nummer'];
 
     /**
      * Definieer de relatie tussen Kapper en Afspraak: Een kapper kan meerdere afspraken hebben.
