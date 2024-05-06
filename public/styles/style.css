@@ -25,6 +25,70 @@ body {
     height: 50px;
 }
 
+/* Grid container dashboard */
+.dashboard-container {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.dashboard-sidebar {
+    border: 1px solid green;
+}
+
+.dashboard-content {
+    border: 1px solid blue;
+}
+
+/* Grid systeem dashboard content */
+
+.container {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.planning-box {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.gegevens-box {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* klanten dashboard */
+
+.klanten-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.klanten-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Afstand tussen de items aanpassen naar wens */
+    margin-bottom: 20px; /* Verticale afstand tussen de rijen aanpassen naar wens */
+}
+
+.klanten-label {
+    font-weight: bold;
+}
+
+/* afspraken css */
+/* behandeling */
+
+.afspraak-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 /* font */
 
 .poppins-thin {
@@ -136,56 +200,3 @@ body {
 }
 
 
-/* Grid container dashboard */
-    .dashboard-container {
-        display: grid;
-        grid-template-columns: auto 1fr;
-    }
-
-    .dashboard-sidebar {
-        border: 1px solid red;
-    }
-
-    .dashboard-content {
-        border: 1px solid blue;
-    }
-
-/* Grid systeem dashboard content */
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.planning-box {
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-}
-
-.gegevens-box {
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* klanten dashboard */
-
-    .klanten-list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .klanten-item {
-        display: flex;
-        flex-direction: column;
-        margin-right: 20px; /* Afstand tussen de items aanpassen naar wens */
-        margin-bottom: 20px; /* Verticale afstand tussen de rijen aanpassen naar wens */
-    }
-
-    .klanten-label {
-        font-weight: bold;
-    }
