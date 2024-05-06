@@ -1,35 +1,36 @@
 <?php
 
+use App\Http\Controllers\AfspraakController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
+// De route's voor het werknemersdashboard
 Route::middleware(['auth'])->group(function () {
-    // De route voor het klantendashboard verwijderen
-    // Route::get('/customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
-
-    // De route voor het werknemersdashboard behouden
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
     Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
     Route::get('/employee/berichten', [EmployeeController::class, 'berichten'])->name('employee.berichten');
-
-    // De standaard homepagina
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
-// Auth routes voor zowel klanten als werknemers
-Route::group(['middleware' => 'guest'], function () {
-    // Inlogpagina
-    Route::get('/', [AuthController::class, 'login'])->name('login.get');
-    Route::get('/login', [AuthController::class, 'login'])->name('login.get');
-    Route::post('/login', [AuthController::class, 'handleLogin'])->name('login.post');
+// De standaard homepagina
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    // Registratiepagina
-    Route::get('/register', [AuthController::class, 'register'])->name('register.get');
-    Route::post('/register', [AuthController::class, 'handleRegister'])->name('register.post');
-});
+// Afspraak route's
+Route::get('/afspraak', [AfspraakController::class, 'afspraak'])->name('afspraak.get');
+Route::get('/behandeling', [AfspraakController::class, 'behandeling'])->name('behandeling.get');
+Route::get('/kappers', [AfspraakController::class, 'kappers'])->name('kappers.get');
+Route::get('/dag-tijd', [AfspraakController::class, 'dag_tijd'])->name('dag_tijd.get');
+Route::get('/gegevens', [AfspraakController::class, 'gegevens'])->name('gegevens.get');
+Route::get('/overzicht', [AfspraakController::class, 'overzicht'])->name('overzicht.get');
+
+// Inlogpagina
+Route::get('/login', [AuthController::class, 'login'])->name('login.get');
+Route::post('/login', [AuthController::class, 'handleLogin'])->name('login.post');
+
+// Registratiepagina
+Route::get('/register', [AuthController::class, 'register'])->name('register.get');
+Route::post('/register', [AuthController::class, 'handleRegister'])->name('register.post');
 
 // Uitloggenroute
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');

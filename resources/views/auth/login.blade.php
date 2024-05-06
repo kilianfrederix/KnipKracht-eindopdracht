@@ -10,6 +10,9 @@
 <body>
     <section class="form-box poppins-regular">
         <div class="form-content">
+        <div class="auth-nav">
+            <a href="/">Home</a>
+        </div>
             <h2>Login</h2>
             <form action="{{ route('login.post') }}" method="post">
                 @csrf

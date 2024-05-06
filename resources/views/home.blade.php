@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Customer Dashboard')
+@section('title', 'Home')
 
 @section('content')
     <div class="container">

@@ -1,11 +1,11 @@
 @extends('layouts.default')
 
-@section('title', 'Behandelingen')
+@section('title', 'Gegevens')
 
 @section('content')
     <div class="container">
         <div>
-        <h2>Behandeling</h2>
+        <h2>Gegevens</h2>
             <ul>
                 <li><a href="{{ route('behandeling.get')}}">Behandelingen</a></li>
                 <li><a href="{{ route('kappers.get')}}">Kappers</a></li>

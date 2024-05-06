@@ -85,6 +85,13 @@ body {
     text-decoration: underline;
 }
 
+.auth-nav {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    background-color: black;
+}
+
 /* font */
 
 .poppins-thin {

@@ -10,7 +10,10 @@
 <body>
     <section class="form-box poppins-regular">
         <div class="form-content">
-            <h2>Registreren</h2>
+            <div class="auth-nav">
+                <a href="/">Home</a>
+            </div>
+                <h2>Registreren</h2>
             <form action="{{ route('register.post') }}" method="post">
                 @csrf
                 <div class="form-inputs">

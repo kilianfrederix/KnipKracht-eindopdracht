@@ -14,8 +14,10 @@
     <div>
         <header>
             <nav class="main-nav">
-                @auth
                     <a href="/">Home</a>
+                    <a href="{{ route('afspraak.get')}}">Afspraken</a>
+                    <a href="{{route('login.get')}}">Login</a>
+                @auth
                     <a href="{{ route('logout') }}">Logout</a>
                     @if(Auth::user()->is_employee)
                         <a href="{{ route('employee.dashboard') }}">Dashboard</a>
@@ -23,6 +25,7 @@
                 @endauth
             </nav>
         </header>
+
 
         <main>
             @yield('content')
