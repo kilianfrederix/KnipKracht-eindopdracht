@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('afspraken', function (Blueprint $table) {
             $table->id();
             $table->dateTime('start_tijd');
-            $table->dateTime('eind_tijd');
             $table->timestamps();
         });
     }

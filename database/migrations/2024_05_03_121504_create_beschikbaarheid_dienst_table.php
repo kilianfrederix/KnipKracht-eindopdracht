@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('beschikbaarheid_dienst', function (Blueprint $table) {
             $table->id();
             $table->string('naam');
-            $table->text('beschrijving')->nullable();
             $table->decimal('prijs', 8, 2);
             $table->timestamps();
         });
