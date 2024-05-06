@@ -45,34 +45,47 @@
                         <h2>Behandeling kiezen</h2>
                     </div>
                     <div>
-                        <p>icon</p>
-                        <p>dienst naam</p>
-                        <p>start van €prijs</p>
+                        <label for="behandeling">Behandeling:</label><br>
+                        <select id="behandeling" name="behandeling">
+                            <option value="behandeling1">Behandeling 1</option>
+                            <option value="behandeling2">Behandeling 2</option>
+                            <!-- Voeg andere behandelingen toe -->
+                        </select><br><br>
+                        <p>Start vanaf €prijs</p>
                     </div>
                 </div>
                 {{-- kapper kiezen blok --}}
                 <div>
                     <div>
-                        <h2>kies je kapper</h2>
+                        <h2>Kies je kapper</h2>
                     </div>
                     <div>
                         <img src="" alt="profile image kapper">
-                        <p>kapper naam</p>
+                        <label for="kapper">Kapper:</label><br>
+                        <select id="kapper" name="kapper">
+                            <option value="kapper1">Kapper 1</option>
+                            <option value="kapper2">Kapper 2</option>
+                            <!-- Voeg andere kappers toe -->
+                        </select><br><br>
                     </div>
                 </div>
+
                 {{-- dag / tijd kiezen blok --}}
                 <div>
                     <div>
-                        <h2>kies Dag & Tijd</h2>
-                        <p>agenda</p>
+                        <h2>Kies Dag & Tijd</h2>
+                        <p>Agenda</p>
                     </div>
                     <div>
                         <p>Kies een sleuf voor gekozen datum</p>
                         <ul>
-                            <li>lijst van vrije uren</li>
+                            <li>12:00 - 13:00 (beschikbaar)</li>
+                            <li>13:00 - 14:00 (beschikbaar)</li>
+                            <!-- Voeg andere beschikbare tijdsslots toe -->
                         </ul>
                     </div>
                 </div>
+
                 {{-- klant gegvenens ingeven --}}
                 <div>
                     <div>
@@ -81,7 +94,8 @@
                         <p>Ben jij dit niet <a href="#">Afmelden</a></p>
                     </div>
                     <div>
-                        <form action="#" method="post">
+                        <form action="{{ route('save_customer_data') }}" method="post">
+                            @csrf
                             <label for="naam">Naam:</label><br>
                             <input type="text" id="naam" name="naam" required><br><br>
 
@@ -95,7 +109,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+
 
             {{-- overzicht keuzes --}}
             <div class="right-sidebar">

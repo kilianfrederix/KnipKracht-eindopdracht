@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Klant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,7 @@ class EmployeeController extends Controller
             return view('employee.dashboard');
         } else {
             // Gebruiker is geen werknemer, stuur ze naar de homepagina
-            return redirect()->route('Home.home');
+            return redirect()->route('home');
         }
     }
 
@@ -24,6 +25,7 @@ class EmployeeController extends Controller
     {
         return view('employee.klanten');
     }
+
 
 
     public function berichten()
