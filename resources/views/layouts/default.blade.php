@@ -27,9 +27,9 @@
         </header>
 
 
-        <main>
+        <section class="main-container">
             @yield('content')
-        </main>
+        </section>
 
         <footer class="main-footer">
             <div class="footer-content">

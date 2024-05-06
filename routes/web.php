@@ -16,13 +16,8 @@ Route::middleware(['auth'])->group(function () {
 // De standaard homepagina
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Afspraak route's
+// Afspraak route
 Route::get('/afspraak', [AfspraakController::class, 'afspraak'])->name('afspraak.get');
-Route::get('/behandeling', [AfspraakController::class, 'behandeling'])->name('behandeling.get');
-Route::get('/kappers', [AfspraakController::class, 'kappers'])->name('kappers.get');
-Route::get('/dag-tijd', [AfspraakController::class, 'dag_tijd'])->name('dag_tijd.get');
-Route::get('/gegevens', [AfspraakController::class, 'gegevens'])->name('gegevens.get');
-Route::get('/overzicht', [AfspraakController::class, 'overzicht'])->name('overzicht.get');
 
 // Inlogpagina
 Route::get('/login', [AuthController::class, 'login'])->name('login.get');

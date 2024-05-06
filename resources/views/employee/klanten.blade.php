@@ -3,7 +3,7 @@
 @section('title', 'Dashboard Klanten')
 
 @section('content')
-    <div class="dashboard-container">
+    <div class="container">
         <div class="dashboard-sidebar">
             <h2>Sidebar</h2>
             <ul>

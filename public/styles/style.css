@@ -25,9 +25,21 @@ body {
     height: 50px;
 }
 
-/* Grid container dashboard */
-.dashboard-container {
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
     width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Grid container dashboard */
+
+.dashboard-grid {
     display: grid;
     grid-template-columns: auto 1fr;
 }
@@ -42,8 +54,7 @@ body {
 
 /* Grid systeem dashboard content */
 
-.container {
-    width: 1200px;
+.content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -82,11 +93,31 @@ body {
 }
 
 /* afspraken css */
-/* behandeling */
 
-.afspraak-container {
+.afspraken-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.left-sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.right-sidebar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid green;
 }
 
 /* font */
