@@ -99,6 +99,19 @@ body {
 
 .algemene-info-grid {
     display: grid;
+    align-items: center;
+}
+
+.algemene-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    width: 450px;
 }
 
 /* Mediaquery voor kleinere schermen */
@@ -181,6 +194,14 @@ body {
     gap: 24px;
 }
 
+/* Mediaquery voor kleinere schermen */
+@media (min-width: 500px) {
+    .aanbod-box-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 kolommen op middelgrote schermen */
+    }
+}
+
 /* Mediaquery voor middelgrote schermen */
 @media (min-width: 768px) and (max-width: 991px) {
     .aanbod-box-grid {
@@ -200,7 +221,7 @@ body {
 /* Mediaquery voor extra grote schermen */
 @media (min-width: 1200px) and (max-width: 1439px) {
     .aanbod-box-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         /* 4 kolommen op extra grote schermen */
     }
 }
@@ -349,18 +370,23 @@ body {
     align-items: center;
 }
 
+.home-afspraak-title {
+    color: var(--pink-color);
+    margin: 40px 0px 0px 0px;
+}
+
+.home-afspraak-text {
+    color: var(--pink-color);
+    margin: 10px 0px 30px 0px;
+    width: 500px;
+}
+
 .home-uitleg-content {
     display: flex;
     justify-content: center;
     border: 1px solid blue;
 }
 
-.algemene-info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
 
 .title-slogan {
     display: flex;
@@ -369,9 +395,18 @@ body {
     flex-direction: column;
 }
 
-.title {}
+.title {
+    color: #D87E98;
+    font-size: 30px;
+    margin: 30px 0px 0px 0px;
+}
 
-.slogan {}
+.slogan {
+    color: #D87E98;
+    font-size: 20px;
+    margin: 10px 0px 40px 0px;
+
+}
 
 .home-btn {
     border: 1px solid var(--light-pink-color);
@@ -381,6 +416,8 @@ body {
     padding: 10px 15px 10px 15px;
     border-radius: 10px;
     transition: .5s;
+    margin: 40px 0px 40px 0px;
+
 }
 
 .home-btn:hover {
@@ -390,29 +427,32 @@ body {
 }
 
 .nav-link-aanbod {
-    color: var(--light-pink-color);
+    color: var(--pink-color);
     text-decoration: none;
     transition: .5s;
 }
 
 .nav-link-aanbod:hover {
-    color: var(--pink-color);
+    color: var(--dark-pink-color);
     text-decoration: underline;
 }
 
-.home-aanbod {}
-
-
 .aanbod-image {
-    height: 90px;
+    height: 110px;
     border-radius: 10px;
-
 }
 
 .aanbod-title {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    margin-top: 30px;
+}
+
+.aanbod-title {
+color: var(--pink-color);
+    margin: 20px 0px 10px 0px;
 }
 
 .aanbod-box {

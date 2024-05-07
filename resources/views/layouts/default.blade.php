@@ -20,13 +20,13 @@
                 <a class="nav-link" href="{{ route('about') }}">About us</a>
                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 <a class="nav-link" href="{{ route('login.get') }}">Login</a>
-                <a class="afspraak-maken-btn" href="{{ route('afspraak.get') }}">Maak een afspraak</a>
                 @auth
-                    <a href="{{ route('logout') }}">Logout</a>
+                    <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                     @if (Auth::user()->is_employee)
-                        <a href="{{ route('employee.dashboard') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ route('employee.dashboard') }}">Dashboard</a>
                     @endif
                 @endauth
+                <a class="afspraak-maken-btn" href="{{ route('afspraak.get') }}">Maak een afspraak</a>
             </nav>
         </header>
 
