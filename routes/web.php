@@ -10,14 +10,16 @@ use Illuminate\Support\Facades\Route;
 // De route's voor het werknemersdashboard
 Route::middleware(['auth'])->group(function () {
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
-    // Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
     Route::get('/employee/berichten', [EmployeeController::class, 'berichten'])->name('employee.berichten');
     Route::get('/klanten/{id}', [KlantController::class, 'show'])->name('klanten.show');
     Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
 });
 
-// De standaard homepagina
+// De standaard pagina's
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('about', [HomeController::class, 'about'])->name('about');
+Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+
 
 // Afspraak route
 Route::get('/afspraak', [AfspraakController::class, 'afspraak'])->name('afspraak.get');

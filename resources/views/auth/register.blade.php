@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link href="{{ asset('styles/login-register.css') }}" rel="stylesheet">
     <title>Register</title>
 </head>
+
 <body>
     <section class="form-box poppins-regular">
         <div class="form-content">
             <div class="auth-nav">
-                <a href="/">Home</a>
+                <a href="{{ route('home') }}">Home</a>
             </div>
-                <h2>Registreren</h2>
+            <h2>Registreren</h2>
             <form action="{{ route('register.post') }}" method="post">
                 @csrf
                 <div class="form-inputs">
@@ -24,7 +26,8 @@
                                 <div class="form-error">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input class="form-input" type="text" name="name" id="name" value="{{ old('name') }}">
+                        <input class="form-input" type="text" name="name" id="name"
+                            value="{{ old('name') }}">
                     </div>
                     <div class="form-element">
                         <div>
@@ -33,7 +36,8 @@
                                 <div class="form-error">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input class="form-input" type="text" name="email" id="email" value="{{ old('email') }}">
+                        <input class="form-input" type="text" name="email" id="email"
+                            value="{{ old('email') }}">
                     </div>
                     <div class="form-element">
                         <div>
@@ -42,7 +46,8 @@
                                 <div class="form-error">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input class="form-input" type="text" name="username" id="username" value="{{ old('username') }}">
+                        <input class="form-input" type="text" name="username" id="username"
+                            value="{{ old('username') }}">
                     </div>
                     <div class="form-element">
                         <div>
@@ -60,7 +65,8 @@
                                 <div class="form-error">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input class="form-input" type="password" name="password_confirmation" id="password_confirmation">
+                        <input class="form-input" type="password" name="password_confirmation"
+                            id="password_confirmation">
                     </div>
 
                     <div class="button-box">
@@ -74,5 +80,5 @@
         </div>
     </section>
 </body>
-</html>
 
+</html>

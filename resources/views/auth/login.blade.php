@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link href="{{ asset('styles/login-register.css') }}" rel="stylesheet">
     <title>Login</title>
 </head>
+
 <body>
     <section class="form-box poppins-regular">
         <div class="form-content">
-        <div class="auth-nav">
-            <a href="/">Home</a>
-        </div>
+            <div class="auth-nav">
+                <a href="{{ route('home') }}">Home</a>
+            </div>
             <h2>Login</h2>
             <form action="{{ route('login.post') }}" method="post">
                 @csrf
@@ -24,7 +26,8 @@
                                 <div class="form-error">{{ $message }}</div>
                             @enderror
                         </div>
-                        <input class="form-input" type="text" name="username" id="username" value="{{ old('username') }}">
+                        <input class="form-input" type="text" name="username" id="username"
+                            value="{{ old('username') }}">
                     </div>
                     <div class="form-element">
                         <div>
@@ -47,5 +50,5 @@
         </div>
     </section>
 </body>
-</html>
 
+</html>

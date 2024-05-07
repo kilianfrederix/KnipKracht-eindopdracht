@@ -1,3 +1,19 @@
+:root {
+    --pink-color: #D87E98;
+    /* pink */
+    --dark-pink-color: #D76A81;
+    /* dark pink */
+    --light-pink-color: #FFC8C3;
+    /* light pink */
+    --accent-color: #FFD5C2;
+    /* Geel */
+    --background-color: #f8f9fa;
+    /* Achtergrondkleur */
+    --text-color: #000000;
+    /* error */
+    --error-color: #FF0000;
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -7,38 +23,239 @@ body {
     box-sizing: border-box;
 }
 
-.main-nav {
-    padding: 10px;
-    background-color: lightgrey;
-    border-radius: 5px;
-}
 
 .main-footer {
     text-align: center;
-    color: dimgray;
-    background-color: darkgray;
+    color: var(#000000);
+    background-color: var(--pink-color);
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
     height: 50px;
 }
 
-.main-container {
+
+/* Basisstijlen voor container */
+.container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Mediaquery voor kleine schermen */
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* Mediaquery voor middelgrote schermen */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 90%;
+        /* Container wordt 90% van de scherm breedte */
+    }
+}
+
+/* Mediaquery voor grote schermen */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 1100px;
+        /* Container wordt aangepast voor grote schermen */
+    }
+}
+
+/* Mediaquery voor extra grote schermen */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        /* Container behoudt maximale breedte voor extra grote schermen */
+    }
+}
+
+/* Mediaquery voor extra grote schermen */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .container {
+        max-width: 1200px;
+        /* Container behoudt maximale breedte voor extra grote schermen */
+    }
+}
+
+/* werknemers media query's */
+.werknemers-img-box {
     display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.werknemers-img {
+    border-radius: 10px;
+    height: 200px;
+}
+
+.algemene-info-grid {
+    display: grid;
+}
+
+/* Mediaquery voor kleinere schermen */
+@media (max-width: 767px) {
+    .werknemers-img-box {
+        height: 200px;
+        /* Aangepaste hoogte voor kleinere schermen */
+    }
+
+    .werknemers-img {
+        height: 200px;
+        /* Aangepaste hoogte voor kleinere schermen */
+    }
+}
+
+/* Mediaquery voor middelgrote schermen */
+@media (min-width: 768px) and (max-width: 991px) {
+    .werknemers-img-box {
+        height: 250px;
+        /* Aangepaste hoogte voor middelgrote schermen */
+    }
+
+    .werknemers-img {
+        height: 250px;
+        /* Aangepaste hoogte voor middelgrote schermen */
+    }
+
+    /* Pas de grid-template-columns aan zodat items onder elkaar staan */
+    .algemene-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mediaquery voor grote schermen */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .werknemers-img-box {
+        height: 350px;
+        /* Aangepaste hoogte voor grote schermen */
+    }
+
+    .werknemers-img {
+        height: 350px;
+        /* Aangepaste hoogte voor grote schermen */
+    }
+
+    /* Pas de grid-template-columns aan zodat items naast elkaar staan */
+    .algemene-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mediaquery voor extra grote schermen */
+@media (min-width: 1200px) {
+    .werknemers-img-box {
+        height: 450px;
+        /* Aangepaste hoogte voor extra grote schermen */
+    }
+
+    .werknemers-img {
+        height: 450px;
+        /* Aangepaste hoogte voor extra grote schermen */
+    }
+
+    /* Pas de grid-template-columns aan zodat items naast elkaar staan */
+    .algemene-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* aanbod media query's */
+.aanbod-box-flex {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.container {
-    width: 1200px;
+.aanbod-box-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Mediaquery voor middelgrote schermen */
+@media (min-width: 768px) and (max-width: 991px) {
+    .aanbod-box-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 2 kolommen op middelgrote schermen */
+    }
+}
+
+/* Mediaquery voor grote schermen */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .aanbod-box-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 kolommen op grote schermen */
+    }
+}
+
+/* Mediaquery voor extra grote schermen */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .aanbod-box-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 4 kolommen op extra grote schermen */
+    }
+}
+
+/* Mediaquery voor zeer grote schermen */
+@media (min-width: 1440px) {
+    .aanbod-box-grid {
+        grid-template-columns: repeat(6, 1fr);
+        /* 5 kolommen op zeer grote schermen */
+    }
+}
+
+/* nav bar */
+.main-header {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-pink-color);
+}
+
+.main-nav {
+    padding: 20px 15px 20px 15px;
+    background-color: var(--dark-pink-color);
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: var(--light-pink-color);
+    text-decoration: none;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.afspraak-maken-btn {
+    border: 1px solid var(--light-pink-color);
+    padding: 10px 10px 10px 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: var(--dark-pink-color);
+    text-decoration: none;
+    color: var(--light-pink-color);
+    transition: 1s;
+}
+
+.afspraak-maken-btn:hover {
+    border: 1px solid var(--pink-color);
+    background-color: var(--light-pink-color);
+    color: var(--pink-color);
 }
 
 /* Grid container dashboard */
-
 .dashboard-grid {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -53,7 +270,6 @@ body {
 }
 
 /* Grid systeem dashboard content */
-
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -74,7 +290,6 @@ body {
 }
 
 /* klanten dashboard */
-
 .klanten-list {
     display: flex;
     flex-direction: row;
@@ -84,8 +299,10 @@ body {
 .klanten-item {
     display: flex;
     flex-direction: column;
-    margin-right: 20px; /* Afstand tussen de items aanpassen naar wens */
-    margin-bottom: 20px; /* Verticale afstand tussen de rijen aanpassen naar wens */
+    margin-right: 20px;
+    /* Afstand tussen de items aanpassen naar wens */
+    margin-bottom: 20px;
+    /* Verticale afstand tussen de rijen aanpassen naar wens */
 }
 
 .klanten-label {
@@ -93,7 +310,6 @@ body {
 }
 
 /* afspraken css */
-
 .afspraken-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -120,8 +336,96 @@ body {
     border: 1px solid green;
 }
 
-/* font */
+/* home page */
+.home-content {
+    display: flex;
+    flex-direction: column;
+}
 
+.home-afspraak-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.home-uitleg-content {
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+}
+
+.algemene-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.title-slogan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {}
+
+.slogan {}
+
+.home-btn {
+    border: 1px solid var(--light-pink-color);
+    background-color: var(--pink-color);
+    color: var(--light-pink-color);
+    text-decoration: none;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.home-btn:hover {
+    border: 1px solid var(--pink-color);
+    background-color: var(--light-pink-color);
+    color: var(--pink-color);
+}
+
+.nav-link-aanbod {
+    color: var(--light-pink-color);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.nav-link-aanbod:hover {
+    color: var(--pink-color);
+    text-decoration: underline;
+}
+
+.home-aanbod {}
+
+
+.aanbod-image {
+    height: 90px;
+    border-radius: 10px;
+
+}
+
+.aanbod-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.aanbod-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid var(--pink-color);
+    border-radius: 10px;
+    width: 180px;
+}
+
+/* font */
 .poppins-thin {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
@@ -229,5 +533,3 @@ body {
     font-weight: 900;
     font-style: italic;
 }
-
-

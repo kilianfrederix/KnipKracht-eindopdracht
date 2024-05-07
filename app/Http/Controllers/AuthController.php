@@ -44,7 +44,7 @@ class AuthController extends Controller
 
     public function handleRegister(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'username' => 'required|unique:users',
@@ -67,7 +67,7 @@ class AuthController extends Controller
         if ($user->is_employee) {
             return redirect()->route('employee.dashboard');
         } else {
-            return redirect()->route('customer.dashboard');
+            return redirect()->route('home');
         }
     }
 

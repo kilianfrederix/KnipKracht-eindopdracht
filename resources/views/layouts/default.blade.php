@@ -12,14 +12,18 @@
 <body>
 
     <div>
-        <header>
+
+        <header class="main-header">
+            <img src="#" alt="Logo">
             <nav class="main-nav">
-                    <a href="/">Home</a>
-                    <a href="{{ route('afspraak.get')}}">Afspraken</a>
-                    <a href="{{route('login.get')}}">Login</a>
+                <a class="nav-link" href="{{ route('home') }}">Home</a>
+                <a class="nav-link" href="{{ route('about') }}">About us</a>
+                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                <a class="nav-link" href="{{ route('login.get') }}">Login</a>
+                <a class="afspraak-maken-btn" href="{{ route('afspraak.get') }}">Maak een afspraak</a>
                 @auth
                     <a href="{{ route('logout') }}">Logout</a>
-                    @if(Auth::user()->is_employee)
+                    @if (Auth::user()->is_employee)
                         <a href="{{ route('employee.dashboard') }}">Dashboard</a>
                     @endif
                 @endauth
@@ -27,7 +31,8 @@
         </header>
 
 
-        <section class="main-container">
+
+        <section>
             @yield('content')
         </section>
 
@@ -39,10 +44,8 @@
             </div>
         </footer>
     </div>
-<script src="{{ asset('javascript/afspraken.js') }}"></script>
+    <script src="{{ asset('javascript/afspraken.js') }}"></script>
 
 </body>
 
 </html>
-
-
