@@ -1,0 +1,57 @@
+:root {
+    --pink-color: #D87E98;
+    /* pink */
+    --dark-pink-color: #D76A81;
+    /* dark pink */
+    --light-pink-color: #FFC8C3;
+    /* light pink */
+    --accent-color: #FFD5C2;
+    /* Geel */
+    --background-color: #f8f9fa;
+    /* Achtergrondkleur */
+    --text-color: #000000;
+    /* error */
+    --error-color: #FF0000;
+}
+
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-pink-color);
+}
+
+.header-nav {
+    padding: 20px 15px 20px 15px;
+    background-color: var(--dark-pink-color);
+    border-radius: 5px;
+}
+
+.header-link {
+    color: var(--light-pink-color);
+    text-decoration: none;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+.afspraak-maken-btn {
+    border: 1px solid var(--light-pink-color);
+    padding: 10px 10px 10px 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: var(--dark-pink-color);
+    text-decoration: none;
+    color: var(--light-pink-color);
+    transition: 1s;
+}
+
+.afspraak-maken-btn:hover {
+    border: 1px solid var(--pink-color);
+    background-color: var(--light-pink-color);
+    color: var(--pink-color);
+}

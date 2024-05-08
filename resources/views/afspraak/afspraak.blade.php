@@ -39,6 +39,10 @@
                     <a href="mailto:kilianfrederix@gmail.com">kilianfrederix@gmail.com</a>
                 </div>
             </div>
+
+
+
+
             <div class="main-content">
                 <form id="afspraakForm" action="{{ route('save_customer_data') }}" method="post">
                     @csrf
@@ -48,10 +52,10 @@
                             <h2>Behandeling kiezen</h2>
                         </div>
                         <div>
-                            <label for="behandeling">Behandeling:</label><br>
-                            <select id="behandeling" name="behandeling">
-                                <option value="behandeling1">Behandeling 1</option>
-                                <option value="behandeling2">Behandeling 2</option>
+                            <label for="diensten">diensten:</label><br>
+                            <select id="diensten" name="diensten">
+                                <option value="diensten1">diensten 1</option>
+                                <option value="diensten2">diensten 2</option>
                                 <!-- Voeg andere behandelingen toe -->
                             </select><br><br>
                             <p>Start vanaf €prijs</p>

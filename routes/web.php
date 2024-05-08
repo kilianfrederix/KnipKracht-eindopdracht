@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AfspraakController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\KlantController;
@@ -31,6 +32,12 @@ Route::get('/afspraak/bedankt', function () {
 
 
 Route::get('/afspraak/afsprakenShow/{id}', [KlantController::class, 'show']);
+
+// calendar routes
+Route::get('calendar/index', [CalendarController::class, 'index'])->name('calendar.index');
+Route::post('calendar', [CalendarController::class, 'store'])->name('calendar.store');
+Route::patch('calendar/update/{id}', [CalendarController::class, 'update'])->name('calendar.update');
+Route::delete('calendar/destroy/{id}', [CalendarController::class, 'destroy'])->name('calendar.destroy');
 
 
 

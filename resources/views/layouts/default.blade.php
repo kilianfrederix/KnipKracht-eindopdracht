@@ -19,6 +19,7 @@
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                 <a class="nav-link" href="{{ route('about') }}">About us</a>
                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                <a class="nav-link" href="{{ route('calendar.index') }}">Calender</a>
                 <a class="nav-link" href="{{ route('login.get') }}">Login</a>
                 @auth
                     <a class="nav-link" href="{{ route('logout') }}">Logout</a>

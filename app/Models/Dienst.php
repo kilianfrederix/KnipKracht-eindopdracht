@@ -1,13 +1,13 @@
 <?php
 
-// app/Models/Kapper.php
+// app/Models/Dienst.php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kapper extends Model
+class Dienst extends Model
 {
-    protected $fillable = ['naam', 'email', 'nummer'];
+    protected $fillable = ['name', 'geslacht', 'price'];
 
     public function bookings()
     {
