@@ -55,3 +55,42 @@
 
 
 
+{{-- <!-- Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Book an Appointment</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Appointment Title</label>
+                    <input type="text" class="form-control" id="title">
+                    <span id="titleError" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="behandeling" class="form-label">Treatment</label>
+                    <select class="form-select" id="behandeling">
+                        @foreach($diensten as $dienst)
+                            <option value="{{ $dienst->id }}">{{ $dienst->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="kapper" class="form-label">Barber</label>
+                    <select class="form-select" id="kapper">
+                        @foreach($kappers as $kapper)
+                            <option value="{{ $kapper->id }}">{{ $kapper->naam }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <!-- Voeg andere velden toe voor de datum, tijd, naam, e-mail, telefoon, etc. -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div> --}}

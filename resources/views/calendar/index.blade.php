@@ -35,10 +35,6 @@
             <a class="afspraak-maken-btn" href="{{ route('afspraak.get') }}">Maak een afspraak</a>
         </nav>
     </section>
-    <!-- Button trigger modal -->
-    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-    </button> --}}
 
 
 
@@ -47,41 +43,25 @@
     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Book an Appointment</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Appointment Title</label>
-                        <input type="text" class="form-control" id="title">
-                        <span id="titleError" class="text-danger"></span>
-                    </div>
-                    <div class="mb-3">
-                        <label for="behandeling" class="form-label">Treatment</label>
-                        <select class="form-select" id="behandeling">
-                            @foreach($diensten as $dienst)
-                                <option value="{{ $dienst->id }}">{{ $dienst->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="kapper" class="form-label">Barber</label>
-                        <select class="form-select" id="kapper">
-                            @foreach($kappers as $kapper)
-                                <option value="{{ $kapper->id }}">{{ $kapper->naam }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <!-- Voeg andere velden toe voor de datum, tijd, naam, e-mail, telefoon, etc. -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
-                </div>
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" id="title">
+                <span id="titleError" class="text-danger"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveBtn" class="btn btn-primary">Save changes</button>
+            </div>
             </div>
         </div>
     </div>
+
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -90,6 +70,9 @@
                     <div id="calendar">
 
                     </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -121,8 +104,6 @@
 
                     $('#saveBtn').click(function() {
                         let title = $('#title').val();
-                        let behandeling = $('#behandeling').val(); // Nieuw veld: Behandeling
-                        let kapper = $('#kapper').val(); // Nieuw veld: Kapper
                         let start_date = moment(start).format('YYYY-MM-DD');
                         let end_date = moment(end).format('YYYY-MM-DD');
 
@@ -130,7 +111,7 @@
                             url:"{{ route('calendar.store') }}",
                             type:"POST",
                             dataType:'json',
-                            data: { title, behandeling, kapper, start_date, end_date },
+                            data: { title, start_date, end_date },
                             success:function(response)
                             {
                                 $('#bookingModal').modal('hide')
@@ -155,6 +136,7 @@
                     let id = event.id;
                     let start_date = moment(event.start).format('YYYY-MM-DD');
                     let end_date = moment(event.end).format('YYYY-MM-DD');
+
                     $.ajax({
                             url:"{{ route('calendar.update', '') }}" +'/'+ id,
                             type:"PATCH",
@@ -173,7 +155,7 @@
                 eventClick: function(event) {
                     let id = event.id;
 
-                    if(confirm('era you sure you want to remove it')) {
+                    if(confirm('are you sure you want to remove it')) {
                         $.ajax({
                             url:"{{ route('calendar.destroy', '') }}" +'/'+ id,
                             type:"DELETE",

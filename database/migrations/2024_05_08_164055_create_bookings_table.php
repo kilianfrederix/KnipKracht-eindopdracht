@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Dienst;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,8 @@ return new class extends Migration
             $table->string('title');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->foreignId('dienst_id');
+            $table->foreignId('kapper_id');
             $table->timestamps();
         });
     }
