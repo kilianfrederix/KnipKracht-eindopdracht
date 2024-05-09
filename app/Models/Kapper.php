@@ -1,6 +1,7 @@
 <?php
 
-// app/Models/Kapper.php
+// Kapper.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

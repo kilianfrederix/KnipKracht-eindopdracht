@@ -75,7 +75,7 @@
             <p class="home-afspraak-text">Als een kapper die u kiest niet beschikbaar is voor de gekozen datum, dan kan u
                 altijd bij de andere kappers
                 kijken voor een vrije plaats</p>
-            <a class="afspraak-maken-btn" href="{{ route('afspraak.get') }}">Maak een afspraak</a>
+            <a class="afspraak-maken-btn" href="{{ route('calendar.index') }}">Maak een afspraak</a>
         </div>
     </div>
 

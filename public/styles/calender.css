@@ -55,3 +55,16 @@
     background-color: var(--light-pink-color);
     color: var(--pink-color);
 }
+
+.main-footer {
+    text-align: center;
+    color: var(#000000);
+    background-color: var(--pink-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+

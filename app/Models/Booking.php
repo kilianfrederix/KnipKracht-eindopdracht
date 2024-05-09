@@ -1,13 +1,22 @@
 <?php
 
+// Booking.php (in app/Models directory)
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    use HasFactory;
+    protected $fillable = ['title', 'start_date', 'end_date', 'kapper_id', 'dienst_id'];
 
-    protected $fillable = ['title', 'start_date', 'end_date'];
+    public function kapper()
+    {
+        return $this->belongsTo(Kapper::class);
+    }
+
+    public function dienst()
+    {
+        return $this->belongsTo(Dienst::class);
+    }
 }

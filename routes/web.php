@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AfspraakController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\HomeController;
@@ -22,16 +21,7 @@ Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 
 
-// Afspraak route
-Route::get('/afspraak', [AfspraakController::class, 'afspraak'])->name('afspraak.get');
-Route::post('/afspraak/opslaan', [AfspraakController::class, 'opslaan'])->name('afspraak.opslaan');
-Route::post('/save-customer-data', [KlantController::class, 'save'])->name('save_customer_data');
-Route::get('/afspraak/bedankt', function () {
-    return view('afspraak.bedankt');
-})->name('afspraak.bedankt');
 
-
-Route::get('/afspraak/afsprakenShow/{id}', [KlantController::class, 'show']);
 
 // calendar routes
 Route::get('calendar/index', [CalendarController::class, 'index'])->name('calendar.index');
