@@ -128,6 +128,10 @@
                 defaultView: 'agendaWeek',
                 timezone: 'local', // Stel de tijdszone in op 'local'
                 timeFormat: 'h:mm a', // Gebruik 12-uursklok met AM/PM-notatie
+                selectConstraint: {
+                    start: '07:00', // Starttijd voor selectiebeperking
+                    end: '19:00',   // Eindtijd voor selectiebeperking
+                },
                 select: function(start, end, allDays) {
                     $('#bookingModal').modal('toggle');
 
