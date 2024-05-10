@@ -92,59 +92,59 @@
     width: 30px;
 }
 
-.Knippen-Dames {
-    border: 1px solid #FFD0D8;
-    background-color: #FFD0D8;
+.knippen {
+    border: 1px solid #FFA7B6;
+    background-color: #FFA7B6;
 }
 
-.Knippen-Heren {
+.Knippen {
     border: 1px solid #A5DAF0;
     background-color: #A5DAF0;
 }
 
-.wassen-Knippen-drogen-dames {
+.Wassen-Knippen-Drogen {
     border: 1px solid #FF8FC7;
     background-color: #FF8FC7;
 }
 
-.wassen-Knippen-drogen-Heren {
+.wassen-knippen-drogen {
     border: 1px solid #8BB0F2;
     background-color: #8BB0F2;
 }
 
 .scheren {
-    border: 1px solid #809063;
-    background-color: #809063;
+    border: 1px solid #68A200;
+    background-color: #68A200;
 }
 
 .trimmen {
-    border: 1px solid #FFE140;
-    background-color: #FFE140;
+    border: 1px solid #12836c;
+    background-color: #12836c;
 }
 
 .kleuren {
-    border: 1px solid #FFB89B;
-    background-color: #FFB89B;
+    border: 1px solid #C83C00;
+    background-color: #C83C00;
 }
 
-.basis-kleuren {
+.Basis-kleuren {
     border: 1px solid #AE94E4;
     background-color: #AE94E4;
 }
 
 .kort-Haar-Kleuren {
-    border: 1px solid #40FF40;
-    background-color: #40FF40;
+    border: 1px solid #E14667;
+    background-color: #E14667;
 }
 
 .Half-Lang-Haar-Kleuren {
-    border: 1px solid #FF4500;
-    background-color: #FF4500;
+    border: 1px solid #A81E3C;
+    background-color: #A81E3C;
 }
 
-.Lang-Haar-Kleuren {
-    border: 1px solid #A760E9;
-    background-color: #A760E9;
+.lang-Haar-Kleuren {
+    border: 1px solid #850B25;
+    background-color: #850B25;
 }
 
 .Bruidskapsel {
@@ -152,22 +152,22 @@
     background-color: #FF4FAE;
 }
 
-.HoofdMassage-dames {
-    border: 1px solid #FFE3CB;
-    background-color: #FFE3CB;
+.hoofd-massage {
+    border: 1px solid #FF9F4D;
+    background-color: #FF9F4D;
 }
 
-.HoofdMassage-heren {
-    border: 1px solid #A0A040;
-    background-color: #A0A040;
+.Hoofd-Massage {
+    border: 1px solid #CD88FF;
+    background-color: #CD88FF;
 }
 
 .permanent {
-    border: 1px solid #A04040;
-    background-color: #A04040;
+    border: 1px solid #C40E0E;
+    background-color: #C40E0E;
 }
 
-.krullen {
+.Krullen {
     border: 1px solid #B365D9;
     background-color: #B365D9;
 }

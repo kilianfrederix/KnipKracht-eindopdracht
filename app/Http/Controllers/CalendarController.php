@@ -29,49 +29,49 @@ class CalendarController extends Controller
             $color = null;
             switch ($dienst->name) {
                 case 'knippen':
-                    $color = '#FFC0CB'; // Lichtroze
+                    $color = '#FF899D'; // Lichtroze
                     break;
                 case 'Knippen':
                     $color = '#87CEEB'; // Lichtblauw
                     break;
-                case 'Wassen Knippen Drogen':
+                case 'Wassen-Knippen-Drogen':
                     $color = '#FF69B4'; // Fuchsia
                     break;
-                case 'wassen knippen drogen':
+                case 'wassen-knippen-drogen':
                     $color = '#6495ED'; // Hemelsblauw
                     break;
                 case 'scheren':
-                    $color = '#556B2F'; // Donkergroen
+                    $color = '#68A200'; // Donkergroen
                     break;
                 case 'trimmen':
-                    $color = '#FFD700'; // Goudgeel
+                    $color = '#12836c'; // Goudgeel
                     break;
                 case 'kleuren':
-                    $color = '#FFA07A'; // Zalmroze
+                    $color = '#C83C00'; // Zalmroze
                     break;
-                case 'Basis kleuren':
+                case 'Basis-kleuren':
                     $color = '#9370DB'; // Medium paars
                     break;
-                case 'kort Haar Kleuren':
-                    $color = '#00FF00'; // Limoengroen
+                case 'kort-Haar-Kleuren':
+                    $color = '#E14667'; // Limoengroen
                     break;
-                case 'Half Lang Haar Kleuren':
-                    $color = '#FF4500'; // Oranjerood
+                case 'Half-Lang-Haar-Kleuren':
+                    $color = '#A81E3C'; // Oranjerood
                     break;
-                case 'lang Haar Kleuren':
-                    $color = '#8A2BE2'; // Blauwviolet
+                case 'lang-Haar-Kleuren':
+                    $color = '#850B25'; // Blauwviolet
                     break;
                 case 'Bruidskapsel':
                     $color = '#FF1493'; // Dieproze
                     break;
-                case 'hoofd massage':
-                    $color = '#808000'; // Olijfgroen
+                case 'hoofd-massage':
+                    $color = '#FF9F4D'; // Olijfgroen
                     break;
-                case 'Hoofd Massage':
-                    $color = '#FFDAB9'; // Peachpuff
+                case 'Hoofd-Massage':
+                    $color = '#CD88FF'; // Peachpuff
                     break;
                 case 'permanent':
-                    $color = '#800000'; // Donkerrood
+                    $color = '#C40E0E'; // Donkerrood
                     break;
                 case 'Krullen':
                     $color = '#9932CC'; // Donkerpaars

@@ -78,102 +78,14 @@
         <div class="row">
             <div class="col-2 mt-5 flex">
                 <div class="info-callender">
-                    <div class="color-codes-info">
-                        <div class="color-box Knippen-Dames"></div>
-                        <div class="text-box">
-                            <p class="info-text">Knippen / Dames</p>
+                    @foreach ($diensten as $dienst)
+                        <div class="color-codes-info">
+                            <div class="color-box {{ $dienst->name }}"></div>
+                            <div class="text-box">
+                                <p class="info-text">{{ $dienst->name }} / {{ $dienst->geslacht }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box Knippen-Heren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Knippen / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box wassen-Knippen-drogen-dames"></div>
-                        <div class="text-box">
-                            <p class="info-text">Wassen Knippen drogen / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box wassen-Knippen-drogen-Heren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Wassen Knippen drogen / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box scheren"></div>
-                        <div class="text-box">
-                            <p class="info-text">scheren / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box trimmen"></div>
-                        <div class="text-box">
-                            <p class="info-text">trimmen / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box kleuren"></div>
-                        <div class="text-box">
-                            <p class="info-text">kleuren / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box basis-kleuren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Basis kleuren / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box kort-Haar-Kleuren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Kort Haar Kleuren / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box Half-Lang-Haar-Kleuren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Half Lang Haar Kleuren / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box Lang-Haar-Kleuren"></div>
-                        <div class="text-box">
-                            <p class="info-text">Lang Haar Kleuren / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box Bruidskapsel"></div>
-                        <div class="text-box">
-                            <p class="info-text">Bruidskapsel / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box HoofdMassage-dames"></div>
-                        <div class="text-box">
-                            <p class="info-text">HoofdMassage / Dames</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box HoofdMassage-heren"></div>
-                        <div class="text-box">
-                            <p class="info-text">HoofdMassage / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box permanent"></div>
-                        <div class="text-box">
-                            <p class="info-text">permanent / Heren</p>
-                        </div>
-                    </div>
-                    <div class="color-codes-info">
-                        <div class="color-box krullen"></div>
-                        <div class="text-box">
-                            <p class="info-text">krullen / Dames</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-10 d-flex align-items-center flex-column">
