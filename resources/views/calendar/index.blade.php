@@ -62,7 +62,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label">title</label>
+                        <label for="title" class="form-label">note</label>
                         <span id="titleError" class="text-danger"></span>
                         <input type="text" class="form-control" id="title">
                     </div>
@@ -76,7 +76,107 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 d-flex align-items-center flex-column">
+            <div class="col-2 mt-5 flex">
+                <div class="info-callender">
+                    <div class="color-codes-info">
+                        <div class="color-box Knippen-Dames"></div>
+                        <div class="text-box">
+                            <p class="info-text">Knippen / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box Knippen-Heren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Knippen / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box wassen-Knippen-drogen-dames"></div>
+                        <div class="text-box">
+                            <p class="info-text">Wassen Knippen drogen / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box wassen-Knippen-drogen-Heren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Wassen Knippen drogen / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box scheren"></div>
+                        <div class="text-box">
+                            <p class="info-text">scheren / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box trimmen"></div>
+                        <div class="text-box">
+                            <p class="info-text">trimmen / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box kleuren"></div>
+                        <div class="text-box">
+                            <p class="info-text">kleuren / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box basis-kleuren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Basis kleuren / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box kort-Haar-Kleuren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Kort Haar Kleuren / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box Half-Lang-Haar-Kleuren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Half Lang Haar Kleuren / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box Lang-Haar-Kleuren"></div>
+                        <div class="text-box">
+                            <p class="info-text">Lang Haar Kleuren / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box Bruidskapsel"></div>
+                        <div class="text-box">
+                            <p class="info-text">Bruidskapsel / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box HoofdMassage-dames"></div>
+                        <div class="text-box">
+                            <p class="info-text">HoofdMassage / Dames</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box HoofdMassage-heren"></div>
+                        <div class="text-box">
+                            <p class="info-text">HoofdMassage / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box permanent"></div>
+                        <div class="text-box">
+                            <p class="info-text">permanent / Heren</p>
+                        </div>
+                    </div>
+                    <div class="color-codes-info">
+                        <div class="color-box krullen"></div>
+                        <div class="text-box">
+                            <p class="info-text">krullen / Dames</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 d-flex align-items-center flex-column">
                 <h2 class="text-center mt-5">FullCalender</h2>
                 <div class="col-md-11 mb-5 d-flex align-items-center flex-column">
                     <div id="calendar"></div>
@@ -127,7 +227,7 @@
                         let dienst_id = $('#dienst').val(); // ID van de geselecteerde dienst
 
                         $.ajax({
-                            url:"{{ route('calendar.store') }}",
+                            url: "{{ route('calendar.store') }}?_=" + Date.now(),
                             type:"POST",
                             dataType:'json',
                             data: { title, start_date, end_date, kapper_id, dienst_id }, // Voeg kapper_id en dienst_id toe
@@ -136,10 +236,11 @@
                                 swal("Good job!", "Event added!", "success");
                                 $('#bookingModal').modal('hide')
                                 $('#calendar').fullCalendar('renderEvent', {
+                                    'id': response.id,
                                     'title': response.title,
                                     'start': response.start,
                                     'end': response.end,
-                                    'color' : response.color,
+                                    'color': response.color, // Gebruik de kleur van de dienst
                                 });
                             },
                             error:function(error)
@@ -158,16 +259,16 @@
                     });
                 },
                 editable: true,
-                eventDrop: function(event) {
+                eventDrop: function(event, delta, revertFunc) {
                     let id = event.id;
-                    let start_date = moment(start).format('YYYY-MM-DD HH:mm:ss');
-                    let end_date = moment(end).format('YYYY-MM-DD HH:mm:ss');
+                    let start_date = moment(event.start).format('YYYY-MM-DD HH:mm:ss');
+                    let end_date = moment(event.end).format('YYYY-MM-DD HH:mm:ss');
                     $.ajax({
                         url:"{{ route('calendar.update', '') }}" +'/'+ id,
                         type:"PATCH",
                         dataType:'json',
                         data: { start_date, end_date },
-                            success:function(response)
+                        success:function(response)
                         {
                             swal("Good job!", "Event Updated!", "success");
                         },
@@ -177,6 +278,7 @@
                         }
                     });
                 },
+
                 eventClick: function(event) {
                     let id = event.id;
                     if(confirm('are you sure you want to remove it')) {

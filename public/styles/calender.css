@@ -64,7 +64,121 @@
 
 .footer-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 50px;
 }
+
+
+.info-callender {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 800px;
+    width: 250px;
+}
+
+.text-box {
+    width: 200px;
+}
+
+.info-text {
+    margin: 0px 0px 5px 10px;
+}
+
+.color-box {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.Knippen-Dames {
+    border: 1px solid #FFD0D8;
+    background-color: #FFD0D8;
+}
+
+.Knippen-Heren {
+    border: 1px solid #A5DAF0;
+    background-color: #A5DAF0;
+}
+
+.wassen-Knippen-drogen-dames {
+    border: 1px solid #FF8FC7;
+    background-color: #FF8FC7;
+}
+
+.wassen-Knippen-drogen-Heren {
+    border: 1px solid #8BB0F2;
+    background-color: #8BB0F2;
+}
+
+.scheren {
+    border: 1px solid #809063;
+    background-color: #809063;
+}
+
+.trimmen {
+    border: 1px solid #FFE140;
+    background-color: #FFE140;
+}
+
+.kleuren {
+    border: 1px solid #FFB89B;
+    background-color: #FFB89B;
+}
+
+.basis-kleuren {
+    border: 1px solid #AE94E4;
+    background-color: #AE94E4;
+}
+
+.kort-Haar-Kleuren {
+    border: 1px solid #40FF40;
+    background-color: #40FF40;
+}
+
+.Half-Lang-Haar-Kleuren {
+    border: 1px solid #FF4500;
+    background-color: #FF4500;
+}
+
+.Lang-Haar-Kleuren {
+    border: 1px solid #A760E9;
+    background-color: #A760E9;
+}
+
+.Bruidskapsel {
+    border: 1px solid #FF4FAE;
+    background-color: #FF4FAE;
+}
+
+.HoofdMassage-dames {
+    border: 1px solid #FFE3CB;
+    background-color: #FFE3CB;
+}
+
+.HoofdMassage-heren {
+    border: 1px solid #A0A040;
+    background-color: #A0A040;
+}
+
+.permanent {
+    border: 1px solid #A04040;
+    background-color: #A04040;
+}
+
+.krullen {
+    border: 1px solid #B365D9;
+    background-color: #B365D9;
+}
+
+.color-codes-info {
+    margin-bottom: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
 
