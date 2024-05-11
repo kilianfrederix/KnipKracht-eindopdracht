@@ -5,32 +5,34 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\KlantController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 // De route's voor het werknemersdashboard
 Route::middleware(['auth'])->group(function () {
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
-    Route::get('/employee/berichten', [EmployeeController::class, 'berichten'])->name('employee.berichten');
+    Route::get('/employee/kappers', [EmployeeController::class, 'kappers'])->name('employee.kappers');
+    Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
+    Route::get('/employee/diensten', [EmployeeController::class, 'diensten'])->name('employee.diensten');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
+
     Route::get('/klanten/{id}', [KlantController::class, 'show'])->name('klanten.show');
     Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
 });
+
 
 // De standaard pagina's
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 
-
-
-
 // calendar routes
 Route::get('calendar/index', [CalendarController::class, 'index'])->name('calendar.index');
 Route::post('calendar', [CalendarController::class, 'store'])->name('calendar.store');
 Route::patch('calendar/update/{id}', [CalendarController::class, 'update'])->name('calendar.update');
 Route::delete('calendar/destroy/{id}', [CalendarController::class, 'destroy'])->name('calendar.destroy');
-
-
-
 
 // Inlogpagina
 Route::get('/login', [AuthController::class, 'login'])->name('login.get');

@@ -7,10 +7,6 @@
 </head>
 <body>
     <h1>Klanten</h1>
-    <ul>
-        @foreach ($klanten as $klant)
-            <li><a href="{{ route('klanten.show', $klant->id) }}">{{ $klant->naam }}</a></li>
-        @endforeach
-    </ul>
+    
 </body>
 </html>

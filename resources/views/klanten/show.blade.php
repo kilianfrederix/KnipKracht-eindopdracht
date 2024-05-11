@@ -7,15 +7,13 @@
 </head>
     <body>
         <h1>Klantgegevens</h1>
-        <p>Naam: {{ $klant->naam }}</p>
-        <p>Email: {{ $klant->email }}</p>
-        <p>Telefoon: {{ $klant->nummer }}</p>
+        <p>Naam: {{  }}</p>
+        <p>Email: {{  }}</p>
+        <p>Telefoon: {{  }}</p>
 
         <h2>Afspraken</h2>
         <ul>
-            @foreach ($afspraken as $afspraak)
-                <li>Datum: {{ $afspraak->datum }}, Tijd: {{ $afspraak->tijd }}</li>
-            @endforeach
+            
         </ul>
     </body>
 </html>
