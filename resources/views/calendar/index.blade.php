@@ -34,46 +34,62 @@
     </section>
     <!-- Modal -->
     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nieuw Evenement Toevoegen</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nieuw Evenement Toevoegen</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="klant_naam" class="form-label">Klant Naam</label>
+                    <span id="klant_naamError" class="text-danger"></span>
+                    <input type="text" class="form-control" id="klant_naam">
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="kapper" class="form-label">Kapper</label>
-                        <span id="kapperError" class="text-danger"></span>
-                        <select class="form-select" id="kapper">
-                            <option value="">Selecteer een kapper</option>
-                            @foreach($kappers as $kapper)
-                                <option value="{{ $kapper->id }}">{{ $kapper->naam }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dienst" class="form-label">Dienst</label>
-                        <span id="dienstError" class="text-danger"></span>
-                        <select class="form-select" id="dienst">
-                            <option value="">Selecteer een dienst</option>
-                            @foreach($diensten as $dienst)
-                                <option value="{{ $dienst->id }}">{{ $dienst->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">note</label>
-                        <span id="titleError" class="text-danger"></span>
-                        <input type="text" class="form-control" id="title">
-                    </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <span id="emailError" class="text-danger"></span>
+                    <input type="email" class="form-control" id="email">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-                    <button type="button" id="saveBtn" class="btn btn-primary">Opslaan</button>
+                <div class="mb-3">
+                    <label for="nummer" class="form-label">Nummer</label>
+                    <span id="nummerError" class="text-danger"></span>
+                    <input type="text" class="form-control" id="nummer">
                 </div>
+                <div class="mb-3">
+                    <label for="kapper" class="form-label">Kapper</label>
+                    <span id="kapperError" class="text-danger"></span>
+                    <select class="form-select" id="kapper">
+                        <option value="">Selecteer een kapper</option>
+                        @foreach($kappers as $kapper)
+                            <option value="{{ $kapper->id }}">{{ $kapper->naam }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dienst" class="form-label">Dienst</label>
+                    <span id="dienstError" class="text-danger"></span>
+                    <select class="form-select" id="dienst">
+                        <option value="">Selecteer een dienst</option>
+                        @foreach($diensten as $dienst)
+                            <option value="{{ $dienst->id }}">{{ $dienst->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Notitie</label>
+                    <span id="titleError" class="text-danger"></span>
+                    <input type="text" class="form-control" id="title">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
+                <button type="button" id="saveBtn" class="btn btn-primary">Opslaan</button>
             </div>
         </div>
     </div>
+</div>
+
     <div class="container">
         <div class="row">
             <div class="col-2 mt-5 flex">
@@ -141,12 +157,15 @@
                         let end_date = moment(end).format('YYYY-MM-DD HH:mm:ss');
                         let kapper_id = $('#kapper').val(); // ID van de geselecteerde kapper
                         let dienst_id = $('#dienst').val(); // ID van de geselecteerde dienst
+                        let klant_naam = $('#klant_naam').val(); // Klant naam
+                        let email = $('#email').val(); // Email
+                        let nummer = $('#nummer').val(); // Nummer
 
                         $.ajax({
                             url: "{{ route('calendar.store') }}?_=" + Date.now(),
                             type:"POST",
                             dataType:'json',
-                            data: { title, start_date, end_date, kapper_id, dienst_id }, // Voeg kapper_id en dienst_id toe
+                            data: { title, start_date, end_date, kapper_id, dienst_id, klant_naam, email, nummer }, // Voeg de extra velden toe
                             success:function(response)
                             {
                                 swal("Good job!", "Event added!", "success");
@@ -169,6 +188,15 @@
                                 }
                                 if(error.responseJSON.errors) {
                                     $('#dienstError').html(error.responseJSON.errors.dienst_id);
+                                }
+                                if(error.responseJSON.errors) {
+                                    $('#nummerError').html(error.responseJSON.errors.nummer);
+                                }
+                                if(error.responseJSON.errors) {
+                                    $('#emailError').html(error.responseJSON.errors.email);
+                                }
+                                if(error.responseJSON.errors) {
+                                    $('#klant_naamError').html(error.responseJSON.errors.klant_naam);
                                 }
                             }
                         });

@@ -103,6 +103,9 @@ class CalendarController extends Controller
             'start_date' => 'required|date',
             'kapper_id' => 'required|exists:kappers,id',
             'dienst_id' => 'required|exists:diensts,id',
+            'klant_naam' => 'required|string',
+            'email' => 'required|email',
+            'nummer' => 'required|string',
         ]);
 
         $dienst = Dienst::findOrFail($request->dienst_id);
@@ -118,6 +121,9 @@ class CalendarController extends Controller
             'end_date' => $end_date->format('Y-m-d H:i:s'), // Sla de berekende einddatum op
             'kapper_id' => $request->kapper_id,
             'dienst_id' => $request->dienst_id,
+            'klant_naam' => $request->klant_naam,
+            'email' => $request->email,
+            'nummer' => $request->nummer,
         ]);
 
         return response()->json([
@@ -126,9 +132,11 @@ class CalendarController extends Controller
             'end' => $end_date->format('Y-m-d H:i:s'),
             'title' => $booking->title,
             'color' => $color,
+            'klant_naam' => $booking->klant_naam,
+            'email' => $booking->email,
+            'nummer' => $booking->nummer,
         ]);
     }
-
 
     public function update(Request $request, $id)
     {
