@@ -23,4 +23,9 @@ class Booking extends Model
     {
         return $this->belongsTo(Dienst::class);
     }
+
+    public function klant()
+    {
+        return $this->belongsTo(Klant::class);
+    }
 }

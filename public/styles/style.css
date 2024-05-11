@@ -573,3 +573,22 @@ color: var(--pink-color);
     font-weight: 900;
     font-style: italic;
 }
+
+
+
+/* dashboard styling */
+/* table styling */
+.aanwezige-werknemers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.aanwezige-werknemers-table th,
+.aanwezige-werknemers-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.aanwezige-werknemers-row:nth-child(even) {
+    background-color: #f2f2f2;
+}

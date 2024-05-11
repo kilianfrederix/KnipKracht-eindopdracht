@@ -6,14 +6,37 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\KlantController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DienstController;
+use App\Http\Controllers\KapperController;
 use Illuminate\Support\Facades\Route;
 
 // De route's voor het werknemersdashboard
 Route::middleware(['auth'])->group(function () {
     Route::get('/employee/dashboard', [EmployeeController::class, 'dashboard'])->name('employee.dashboard');
-    Route::get('/employee/kappers', [EmployeeController::class, 'kappers'])->name('employee.kappers');
-    Route::get('/employee/klanten', [EmployeeController::class, 'klanten'])->name('employee.klanten');
-    Route::get('/employee/diensten', [EmployeeController::class, 'diensten'])->name('employee.diensten');
+
+    // CRUD routes voor diensten
+    Route::get('/diensten', [DienstController::class, 'index'])->name('diensten.index');
+    Route::get('/diensten/create', [DienstController::class, 'create'])->name('diensten.create');
+    Route::post('/diensten', [DienstController::class, 'store'])->name('diensten.store');
+    Route::get('/diensten/{dienst}/edit', [DienstController::class, 'edit'])->name('diensten.edit');
+    Route::put('/diensten/{dienst}', [DienstController::class, 'update'])->name('diensten.update');
+    Route::delete('/diensten/{dienst}', [DienstController::class, 'destroy'])->name('diensten.destroy');
+
+    // CRUD routes voor klanten
+    Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
+    Route::get('/klanten/create', [KlantController::class, 'create'])->name('klanten.create');
+    Route::post('/klanten', [KlantController::class, 'store'])->name('klanten.store');
+    Route::get('/klanten/{klant}/edit', [KlantController::class, 'edit'])->name('klanten.edit');
+    Route::put('/klanten/{klant}', [KlantController::class, 'update'])->name('klanten.update');
+    Route::delete('/klanten/{klant}', [KlantController::class, 'destroy'])->name('klanten.destroy');
+
+    // CRUD routes voor kappers
+    Route::get('/kappers', [KapperController::class, 'index'])->name('kappers.index');
+    Route::get('/kappers/create', [KapperController::class, 'create'])->name('kappers.create');
+    Route::post('/kappers', [KapperController::class, 'store'])->name('kappers.store');
+    Route::get('/kappers/{kapper}/edit', [KapperController::class, 'edit'])->name('kappers.edit');
+    Route::put('/kappers/{kapper}', [KapperController::class, 'update'])->name('kappers.update');
+    Route::delete('/kappers/{kapper}', [KapperController::class, 'destroy'])->name('kappers.destroy');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');

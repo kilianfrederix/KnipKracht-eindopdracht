@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Alle Klanten')
+@section('title', 'Alle Diensten')
 
 @section('content')
     <div class="container">
@@ -16,35 +16,34 @@
                 </ul>
             </div>
             <div class="dashboard-content">
-                <h1>Alle Klanten</h1>
-
+                <h1>Alle Diensten</h1>
                 @if(session('success'))
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
-
-                <a href="{{ route('klanten.create') }}" class="btn btn-primary">Nieuwe Klant Toevoegen</a>
-
-                <table class="table">
+                <a href="{{ route('diensten.create') }}" class="btn btn-primary">Nieuwe Dienst Toevoegen</a>
+                <table class="aanwezige-werknemers-table">
                     <thead>
                         <tr>
                             <th>Naam</th>
-                            <th>Email</th>
-                            <th>Telefoonnummer</th>
-                            <th>Actie</th>
+                            <th>Geslacht</th>
+                            <th>Duur (min)</th>
+                            <th>Prijs</th>
+                            <th>Actie's</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($klanten as $klant)
-                        <tr>
-                            <td>{{ $klant->klant_naam }}</td>
-                            <td>{{ $klant->email }}</td>
-                            <td>{{ $klant->nummer }}</td>
+                        @foreach ($diensten as $dienst)
+                        <tr class="aanwezige-werknemers-row">
+                            <td>{{ $dienst->name }}</td>
+                            <td>{{ $dienst->geslacht }}</td>
+                            <td>{{ $dienst->duration }}</td>
+                            <td>{{ $dienst->price }}</td>
                             <td>
-                                <a href="{{ route('klanten.edit', $klant->id) }}" class="btn btn-primary">Bewerken</a>
-                                <form action="{{ route('klanten.destroy', $klant->id) }}" method="POST" style="display: inline;">
+                                <a href="{{ route('diensten.edit', $dienst->id) }}" class="btn btn-primary">Bewerken</a>
+                                <form action="{{ route('diensten.destroy', $dienst->id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')">Verwijderen</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze dienst wilt verwijderen?')">Verwijderen</button>
                                 </form>
                             </td>
                         </tr>
@@ -55,3 +54,4 @@
         </div>
     </div>
 @endsection
+

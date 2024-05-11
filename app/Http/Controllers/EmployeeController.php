@@ -52,15 +52,6 @@ class EmployeeController extends Controller
         }
     }
 
-    public function kappers()
-    {
-        // Alle kappers ophalen
-        $kappers = Kapper::all();
-
-        // Stuur de kappersgegevens naar de view
-        return view('employee.kappers', compact('kappers'));
-    }
-
     public function klanten()
     {
         // Alle klanten ophalen
@@ -68,14 +59,5 @@ class EmployeeController extends Controller
 
         // Stuur de klantengegevens naar de view
         return view('employee.klanten', compact('klanten'));
-    }
-
-    public function diensten()
-    {
-        // Alle diensten ophalen
-        $diensten = Dienst::all();
-
-        // Stuur de dienstengegevens naar de view
-        return view('employee.diensten', compact('diensten'));
     }
 }
