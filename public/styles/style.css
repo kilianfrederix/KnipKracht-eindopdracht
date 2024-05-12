@@ -554,22 +554,24 @@ color: var(--pink-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 10px 25px 0px 25px;
 }
 
 .klanten-vandaag {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 25px;
-    width: 94%;
+    margin-top: 20px;
+    width: 90%;
 }
 
 .geen-activiteit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 15px;
+    padding: 10px 25px 0px 25px;
     border: 1px solid grey;
     border-radius: 10px;
 }
@@ -577,6 +579,7 @@ color: var(--pink-color);
 /* table styling */
 .aanwezige-werknemers-table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .aanwezige-werknemers-table th,

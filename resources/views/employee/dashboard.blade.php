@@ -31,7 +31,8 @@
                                             <th>Klant</th>
                                             <th>Dienst</th>
                                             <th>Datum</th>
-                                            <th>Uur</th>
+                                            <th>Start</th>
+                                            <th>Eind</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,7 +42,8 @@
                                             <td>{{ $booking['klant_naam'] }}</td>
                                             <td>{{ $booking['title'] }}</td>
                                             <td>{{ $booking['formatted_date'] }}</td>
-                                            <td>{{ $booking['formatted_time'] }}</td>
+                                            <td>{{ $booking['formatted_start_time'] }}</td>
+                                            <td>{{ $booking['formatted_end_time'] }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

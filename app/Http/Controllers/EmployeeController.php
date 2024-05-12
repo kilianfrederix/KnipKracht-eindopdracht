@@ -30,7 +30,8 @@ class EmployeeController extends Controller
                     'klant_naam' => $booking->klant->naam,
                     'title' => $booking->title,
                     'formatted_date' => $booking->start_date->format('d-m-Y'),
-                    'formatted_time' => $booking->start_date->format('H:i'),
+                    'formatted_start_time' => $booking->start_date->format('H:i'),
+                    'formatted_end_time' => $booking->end_date->format('H:i'),
                 ];
             });
 
