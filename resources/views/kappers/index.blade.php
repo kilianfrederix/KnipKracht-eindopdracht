@@ -6,22 +6,22 @@
     <div class="container">
         <div class="dashboard-grid">
             <div class="dashboard-sidebar">
-                    <h2>Sidebar</h2>
-                    <ul>
-                        <li><a href="{{ route('employee.dashboard') }}">Dashboard</a></li>
-                        <li><a href="{{ route('dashboard.index') }}">Bookings</a></li>
-                        <li><a href="{{ route('kappers.index') }}">Kappers</a></li>
-                        <li><a href="{{ route('klanten.index') }}">Klanten</a></li>
-                        <li><a href="{{ route('diensten.index') }}">Diensten</a></li>
-                    </ul>
-                </div>
+                <h2 class="dashboard-title">KnipKracht</h2>
+                <ul class="nav-list">
+                    <li class="dashboard-link @if(Request::is('employee/dashboard')) active @endif"><a href="{{ route('employee.dashboard') }}">Dashboard</a></li>
+                    <li class="dashboard-link @if(Request::is('dashboard')) active @endif"><a href="{{ route('dashboard.index') }}">Bookings</a></li>
+                    <li class="dashboard-link @if(Request::is('kappers')) active @endif"><a href="{{ route('kappers.index') }}">Kappers</a></li>
+                    <li class="dashboard-link @if(Request::is('klanten')) active @endif"><a href="{{ route('klanten.index') }}">Klanten</a></li>
+                    <li class="dashboard-link @if(Request::is('diensten')) active @endif"><a href="{{ route('diensten.index') }}">Diensten</a></li>
+                </ul>
+            </div>
                 <div class="dashboard-content">
                 <h1>Alle Kappers</h1>
                 @if(session('success'))
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
                 <a href="{{ route('kappers.create') }}" class="btn btn-primary">Nieuwe Kapper Toevoegen</a>
-                <table class="table">
+                <table class="aanwezige-werknemers-table">
                     <thead>
                         <tr>
                             <th>Naam</th>
@@ -32,7 +32,7 @@
                     </thead>
                     <tbody>
                         @foreach ($kappers as $kapper)
-                        <tr>
+                        <tr class="aanwezige-werknemers-row">
                             <td>{{ $kapper->naam }}</td>
                             <td>{{ $kapper->email }}</td>
                             <td>{{ $kapper->nummer }}</td>

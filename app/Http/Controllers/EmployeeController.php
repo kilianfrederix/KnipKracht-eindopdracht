@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Kapper;
-use App\Models\Klant;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,9 +20,6 @@ class EmployeeController extends Controller
             $todayBookings = Booking::whereDate('start_date', Carbon::today())->get();
             // Haal alle kappers op
             $kappers = Kapper::all();
-
-            // Haal alle klanten op
-            $klanten = Klant::all();
             // Filter de kappers die vandaag moeten werken
             $kappersVandaag = $todayBookings->pluck('kapper')->unique('id');
 
@@ -53,14 +49,5 @@ class EmployeeController extends Controller
             // Gebruiker is geen werknemer, stuur ze naar de homepagina
             return redirect()->route('home');
         }
-    }
-
-    public function klanten()
-    {
-        // Alle klanten ophalen
-        $klanten = Booking::all();
-
-        // Stuur de klantengegevens naar de view
-        return view('employee.klanten', compact('klanten'));
     }
 }

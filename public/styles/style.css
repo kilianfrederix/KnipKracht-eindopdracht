@@ -23,20 +23,21 @@ body {
     box-sizing: border-box;
 }
 
-
 .main-footer {
     text-align: center;
     color: var(#000000);
-    background-color: var(--pink-color);
+    background-color: var(--dark-pink-color);
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
     height: 50px;
 }
 
+.section-height {
+    height: 651px;
+}
 
 /* Basisstijlen voor container */
 .container {
@@ -242,26 +243,33 @@ body {
     background-color: var(--dark-pink-color);
 }
 
-.main-nav {
-    padding: 20px 15px 20px 15px;
+.main-navigation {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
     background-color: var(--dark-pink-color);
     border-radius: 5px;
 }
 
-.nav-link {
+.nav-links {
     color: var(--light-pink-color);
     text-decoration: none;
     margin-right: 10px;
     transition: .5s;
 }
 
-.nav-link:hover {
+.nav-links:hover {
     text-decoration: underline;
 }
 
+.nav-links.active {
+    color: var(--accent-color);
+}
+
+
 .afspraak-maken-btn {
     border: 1px solid var(--light-pink-color);
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     margin-left: 10px;
     border-radius: 10px;
     background-color: var(--dark-pink-color);
@@ -283,11 +291,43 @@ body {
 }
 
 .dashboard-sidebar {
-    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 29px;
+    padding: 0px 0px 0px 20px;
+    width: 200px;
+    height: 392px;
+}
+
+.dashboard-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.dashboard_link a {
+list-style: none;
+    color: #000000;
+    text-decoration: none;
 }
 
 .dashboard-content {
-    border: 1px solid blue;
+    margin: 29px 25px 29px 25px;
+    padding: 25px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-items {
+    margin: 10px 25px 0px 25px;
 }
 
 /* Grid systeem dashboard content */
@@ -297,17 +337,19 @@ body {
 }
 
 .planning-box {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
 }
 
 .gegevens-box {
-    border: 1px solid blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    margin-left: 25px;
+    border: 1px solid grey;
+    border-radius: 10px;
 }
 
 /* klanten dashboard */
@@ -340,21 +382,18 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid red;
 }
 
 .main-content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid blue;
 }
 
 .right-sidebar {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid green;
 }
 
 /* home page */
@@ -384,7 +423,6 @@ body {
 .home-uitleg-content {
     display: flex;
     justify-content: center;
-    border: 1px solid blue;
 }
 
 
@@ -465,6 +503,93 @@ color: var(--pink-color);
     width: 180px;
 }
 
+/* main dashboard styling */
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-link {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: var(--dark-pink-color);
+    border-radius: 10px;
+}
+
+.dashboard-link.active {
+    color: var(--light-pink-color);
+    background-color: var(--dark-pink-color);
+    margin-right: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.dashboard-link.active:hover {
+    background-color: var(--light-pink-color);
+    color: var(--dark-pink-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.dashboard-link a {
+    color: var(--light-pink-color);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.dashboard-link a:hover {
+    background-color: var(--light-pink-color);
+    color: var(--dark-pink-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.aanwezige-werknemers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.klanten-vandaag {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    width: 94%;
+}
+
+.geen-activiteit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+/* table styling */
+.aanwezige-werknemers-table {
+    border-collapse: collapse;
+}
+
+.aanwezige-werknemers-table th,
+.aanwezige-werknemers-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.aanwezige-werknemers-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
 /* font */
 .poppins-thin {
     font-family: "Poppins", sans-serif;
@@ -506,89 +631,4 @@ color: var(--pink-color);
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-}
-
-.poppins-extrabold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-}
-
-.poppins-black {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-.poppins-thin-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: italic;
-}
-
-.poppins-extralight-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: italic;
-}
-
-.poppins-light-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.poppins-regular-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.poppins-medium-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-}
-
-.poppins-semibold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-}
-
-.poppins-bold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.poppins-extrabold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: italic;
-}
-
-.poppins-black-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-}
-
-
-
-/* dashboard styling */
-/* table styling */
-.aanwezige-werknemers-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.aanwezige-werknemers-table th,
-.aanwezige-werknemers-table td {
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-
-.aanwezige-werknemers-row:nth-child(even) {
-    background-color: #f2f2f2;
 }
