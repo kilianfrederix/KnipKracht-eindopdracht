@@ -42,9 +42,9 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="klant_naam" class="form-label">Klant Naam</label>
-                    <span id="klant_naamError" class="text-danger"></span>
-                    <input type="text" class="form-control" id="klant_naam">
+                    <label for="naam" class="form-label">Klant Naam</label>
+                    <span id="naamError" class="text-danger"></span>
+                    <input type="text" class="form-control" id="naam">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -157,7 +157,7 @@
                         let end_date = moment(end).format('YYYY-MM-DD HH:mm:ss');
                         let kapper_id = $('#kapper').val(); // ID van de geselecteerde kapper
                         let dienst_id = $('#dienst').val(); // ID van de geselecteerde dienst
-                        let klant_naam = $('#klant_naam').val(); // Klant naam
+                        let naam = $('#naam').val(); // Klant naam
                         let email = $('#email').val(); // Email
                         let nummer = $('#nummer').val(); // Nummer
 
@@ -165,7 +165,7 @@
                             url: "{{ route('calendar.store') }}?_=" + Date.now(),
                             type:"POST",
                             dataType:'json',
-                            data: { title, start_date, end_date, kapper_id, dienst_id, klant_naam, email, nummer }, // Voeg de extra velden toe
+                            data: { title, start_date, end_date, kapper_id, dienst_id, naam, email, nummer }, // Voeg de extra velden toe
                             success:function(response)
                             {
                                 swal("Good job!", "Event added!", "success");
@@ -196,7 +196,7 @@
                                     $('#emailError').html(error.responseJSON.errors.email);
                                 }
                                 if(error.responseJSON.errors) {
-                                    $('#klant_naamError').html(error.responseJSON.errors.klant_naam);
+                                    $('#naamError').html(error.responseJSON.errors.naam);
                                 }
                             }
                         });

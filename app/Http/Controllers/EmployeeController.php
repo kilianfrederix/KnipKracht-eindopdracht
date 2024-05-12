@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
-use App\Models\Dienst;
 use App\Models\Kapper;
+use App\Models\Klant;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,6 +21,9 @@ class EmployeeController extends Controller
             $todayBookings = Booking::whereDate('start_date', Carbon::today())->get();
             // Haal alle kappers op
             $kappers = Kapper::all();
+
+            // Haal alle klanten op
+            $klanten = Klant::all();
             // Filter de kappers die vandaag moeten werken
             $kappersVandaag = $todayBookings->pluck('kapper')->unique('id');
 
@@ -28,7 +31,7 @@ class EmployeeController extends Controller
             $formattedBookings = $todayBookings->map(function ($booking) {
                 return [
                     'kapper' => $booking->kapper->naam,
-                    'klant_naam' => $booking->klant_naam,
+                    'klant_naam' => $booking->klant->naam,
                     'title' => $booking->title,
                     'formatted_date' => $booking->start_date->format('d-m-Y'),
                     'formatted_time' => $booking->start_date->format('H:i'),
@@ -36,7 +39,7 @@ class EmployeeController extends Controller
             });
 
             // Bereken het aantal terugkerende en nieuwe klanten
-            $klantNamen = $todayBookings->pluck('klant_naam')->toArray();
+            $klantNamen = $todayBookings->pluck('klant_id')->toArray();
             $aantalTerugkerend = count(array_filter(array_count_values($klantNamen), function ($count) {
                 return $count > 1;
             }));

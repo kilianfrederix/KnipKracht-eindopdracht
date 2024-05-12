@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Kapper;
 use App\Models\Dienst;
+use App\Models\Klant;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
@@ -103,9 +104,15 @@ class CalendarController extends Controller
             'start_date' => 'required|date',
             'kapper_id' => 'required|exists:kappers,id',
             'dienst_id' => 'required|exists:diensts,id',
-            'klant_naam' => 'required|string',
+            'naam' => 'required|string',
             'email' => 'required|email',
             'nummer' => 'required|string',
+        ]);
+
+        $klant = Klant::firstOrCreate([
+            'naam' => $request->naam,
+            'email' => $request->email,
+            'nummer' => $request->nummer,
         ]);
 
         $dienst = Dienst::findOrFail($request->dienst_id);
@@ -121,9 +128,7 @@ class CalendarController extends Controller
             'end_date' => $end_date->format('Y-m-d H:i:s'), // Sla de berekende einddatum op
             'kapper_id' => $request->kapper_id,
             'dienst_id' => $request->dienst_id,
-            'klant_naam' => $request->klant_naam,
-            'email' => $request->email,
-            'nummer' => $request->nummer,
+            'klant_id' => $klant->id, // Gebruik klant_id van gemaakte of bestaande klant
         ]);
 
         return response()->json([
@@ -132,9 +137,7 @@ class CalendarController extends Controller
             'end' => $end_date->format('Y-m-d H:i:s'),
             'title' => $booking->title,
             'color' => $color,
-            'klant_naam' => $booking->klant_naam,
-            'email' => $booking->email,
-            'nummer' => $booking->nummer,
+            'klant_id' => $klant->id, // Geef klant_id terug in de JSON-respons
         ]);
     }
 

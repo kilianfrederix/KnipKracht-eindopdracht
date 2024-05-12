@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Booking;
+use App\Models\Klant;
 use Illuminate\Http\Request;
 
 class KlantController extends Controller
 {
     public function index()
     {
-        $klanten = Booking::all();
+        $klanten = Klant::all();
         return view('klanten.index', compact('klanten'));
     }
 
@@ -21,26 +21,26 @@ class KlantController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'klant_naam' => 'required|string',
-            'email' => 'required|email|unique:klanten',
+            'naam' => 'required|string',
+            'email' => 'required|email|unique:klants',
             'nummer' => 'required|string',
         ]);
 
-        Booking::create($request->all());
+        Klant::create($request->all());
 
         return redirect()->route('klanten.index')->with('success', 'Klant is succesvol toegevoegd.');
     }
 
-    public function edit(Booking $klant)
+    public function edit(Klant $klant)
     {
         return view('klanten.edit', compact('klant'));
     }
 
-    public function update(Request $request, Booking $klant)
+    public function update(Request $request, Klant $klant)
     {
         $request->validate([
-            'klant_naam' => 'required|string',
-            'email' => 'required|email|unique:klanten,email,' . $klant->id,
+            'naam' => 'required|string',
+            'email' => 'required|email|unique:klants,email,' . $klant->id,
             'nummer' => 'required|string',
         ]);
 
@@ -49,7 +49,7 @@ class KlantController extends Controller
         return redirect()->route('klanten.index')->with('success', 'Klant is succesvol bijgewerkt.');
     }
 
-    public function destroy(Booking $klant)
+    public function destroy(Klant $klant)
     {
         $klant->delete();
         return redirect()->route('klanten.index')->with('success', 'Klant is succesvol verwijderd.');

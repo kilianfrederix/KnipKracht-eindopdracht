@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    protected $fillable = ['title', 'start_date', 'end_date', 'kapper_id', 'dienst_id', 'klant_naam', 'email', 'nummer',];
+    protected $fillable = ['title', 'start_date', 'end_date', 'kapper_id', 'dienst_id', 'klant_id'];
 
     protected $casts = [
         'start_date' => 'datetime',

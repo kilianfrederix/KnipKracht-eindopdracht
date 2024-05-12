@@ -36,7 +36,7 @@
                     <tbody>
                         @foreach ($klanten as $klant)
                         <tr>
-                            <td>{{ $klant->klant_naam }}</td>
+                            <td>{{ $klant->naam }}</td>
                             <td>{{ $klant->email }}</td>
                             <td>{{ $klant->nummer }}</td>
                             <td>

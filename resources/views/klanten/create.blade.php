@@ -9,8 +9,8 @@
         <form action="{{ route('klanten.store') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="klant_naam">Naam:</label>
-                <input type="text" id="klant_naam" name="klant_naam" class="form-control" required>
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="naam" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>

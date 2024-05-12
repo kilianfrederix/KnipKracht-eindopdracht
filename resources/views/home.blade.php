@@ -38,7 +38,6 @@
             </div>
         </div>
     </div>
-    {{-- backend voor de diensten te tonen --}}
     <div class="container">
         <div class="aanbod-box-flex">
             <div class="aanbod-box-grid">

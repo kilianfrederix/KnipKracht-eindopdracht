@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Klant;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller

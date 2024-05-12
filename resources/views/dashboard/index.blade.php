@@ -36,7 +36,7 @@
                         @foreach($bookings as $booking)
                         <tr class="aanwezige-werknemers-row">
                             <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->kapper->naam }}</a></td>
-                            <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->klant_naam }}</a></td>
+                            <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->klant->naam }}</a></td>
                             <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->title }}</a></td>
                             <td>{{ $booking->start_date }}</td>
                             <td>{{ $booking->start_date }}</td>

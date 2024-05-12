@@ -40,9 +40,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
-
-    Route::get('/klanten/{id}', [KlantController::class, 'show'])->name('klanten.show');
-    Route::get('/klanten', [KlantController::class, 'index'])->name('klanten.index');
 });
 
 

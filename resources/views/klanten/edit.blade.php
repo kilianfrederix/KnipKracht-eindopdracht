@@ -10,8 +10,8 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="klant_naam">Naam:</label>
-                <input type="text" id="klant_naam" name="klant_naam" class="form-control" value="{{ $klant->klant_naam }}" required>
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="klant_naam" class="form-control" value="{{ $klant->naam }}" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
