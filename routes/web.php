@@ -46,7 +46,6 @@ Route::middleware(['auth'])->group(function () {
 // De standaard pagina's
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [HomeController::class, 'about'])->name('about');
-Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 
 // calendar routes
 Route::get('calendar/index', [CalendarController::class, 'index'])->name('calendar.index');

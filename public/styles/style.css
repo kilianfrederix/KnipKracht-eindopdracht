@@ -17,26 +17,88 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 * {
     box-sizing: border-box;
 }
 
+/* footer css */
 .main-footer {
+    width: 100%;
     text-align: center;
     color: var(#000000);
     background-color: var(--dark-pink-color);
 }
 
 .footer-content {
-    display: flex;
-    justify-content: center;
-    height: 50px;
+    height: auto;
+    width: 100%;
 }
 
-.section-height {
-    height: 651px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-content-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.footer-content-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.footer-content-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+/* dashboard footer css */
+
+.dashboard-main-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--dark-pink-color);
+}
+
+.dashboard-footer-content {
+    height: auto;
+    width: 100%;
+}
+
+.dashboard-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dashboard-footer-content-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-footer-content-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-footer-content-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Basisstijlen voor container */
@@ -112,7 +174,7 @@ body {
 }
 
 .info-text {
-    width: 450px;
+    width: auto;
 }
 
 /* Mediaquery voor kleinere schermen */
@@ -246,9 +308,35 @@ body {
 .main-navigation {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     padding: 10px 15px 10px 15px;
     background-color: var(--dark-pink-color);
     border-radius: 5px;
+}
+
+.nav-content-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-content-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-content-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .nav-links {
@@ -256,6 +344,12 @@ body {
     text-decoration: none;
     margin-right: 10px;
     transition: .5s;
+    font-size: 20px;
+}
+
+.nav-links-hidden {
+    text-decoration: none;
+    color: var(--light-pink-color);
 }
 
 .nav-links:hover {
@@ -264,6 +358,7 @@ body {
 
 .nav-links.active {
     color: var(--accent-color);
+    text-decoration: underline;
 }
 
 
@@ -276,6 +371,7 @@ body {
     text-decoration: none;
     color: var(--light-pink-color);
     transition: 1s;
+    font-size: 20px;
 }
 
 .afspraak-maken-btn:hover {
@@ -311,7 +407,7 @@ body {
 }
 
 .dashboard_link a {
-list-style: none;
+    list-style: none;
     color: #000000;
     text-decoration: none;
 }
@@ -455,6 +551,7 @@ list-style: none;
     border-radius: 10px;
     transition: .5s;
     margin: 40px 0px 40px 0px;
+    font-size: 20px;
 
 }
 
@@ -489,7 +586,7 @@ list-style: none;
 }
 
 .aanbod-title {
-color: var(--pink-color);
+    color: var(--pink-color);
     margin: 20px 0px 10px 0px;
 }
 
@@ -501,6 +598,72 @@ color: var(--pink-color);
     border: 1px solid var(--pink-color);
     border-radius: 10px;
     width: 180px;
+}
+
+/* about */
+/* Mediaquery voor kleinere schermen */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mediaquery voor middelgrote schermen */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mediaquery voor grote schermen */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mediaquery voor extra grote schermen */
+@media (min-width: 1200px) and (max-width: 1439px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+/* Mediaquery voor zeer grote schermen */
+@media (min-width: 1440px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    }
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-werknemer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-image {
+    height: 425px;
+    border-radius: 10px;
 }
 
 /* main dashboard styling */

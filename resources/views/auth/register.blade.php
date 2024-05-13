@@ -13,7 +13,7 @@
     <section class="form-box poppins-regular">
         <div class="form-content">
             <div class="auth-nav">
-                <a href="{{ route('home') }}">Home</a>
+                <a class="auth-nav-link" href="{{ route('home') }}">Home</a>
             </div>
             <h2>Registreren</h2>
             <form action="{{ route('register.post') }}" method="post">
