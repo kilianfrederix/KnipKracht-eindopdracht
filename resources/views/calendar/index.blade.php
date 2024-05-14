@@ -218,15 +218,14 @@
                                 nummer
                             }, // Voeg de extra velden toe
                             success: function(response) {
-                                swal("Good job!", "Event added!", "success");
+                                swal("Goed Bezig!", " Je evenement is toegevoegd!", "success");
                                 $('#bookingModal').modal('hide')
                                 $('#calendar').fullCalendar('renderEvent', {
                                     'id': response.id,
                                     'title': response.title,
                                     'start': response.start,
                                     'end': response.end,
-                                    'color': response
-                                        .color, // Gebruik de kleur van de dienst
+                                    'color': response.color,
                                 });
                             },
                             error: function(error) {
@@ -263,33 +262,39 @@
                     let id = event.id;
                     let start_date = moment(event.start).format('YYYY-MM-DD HH:mm:ss');
                     let end_date = moment(event.end).format('YYYY-MM-DD HH:mm:ss');
-                    $.ajax({
-                        url: "{{ route('calendar.update', '') }}" + '/' + id,
-                        type: "PATCH",
-                        dataType: 'json',
-                        data: {
-                            start_date,
-                            end_date
-                        },
-                        success: function(response) {
-                            swal("Good job!", "Event Updated!", "success");
-                        },
-                        error: function(error) {
-                            console.log(error)
-                        }
-                    });
+
+                    // Toon een bevestigingsdialoog voordat het evenement wordt bijgewerkt
+                    if (confirm('Weet je zeker dat je dit evenement wilt bijwerken?')) {
+                        $.ajax({
+                            url: "{{ route('calendar.update', '') }}" + '/' + id,
+                            type: "PATCH",
+                            dataType: 'json',
+                            data: {
+                                start_date,
+                                end_date
+                            },
+                            success: function(response) {
+                                swal("Goed bezig!", "Je evenement is bijgewerkt!", "success");
+                            },
+                            error: function(error) {
+                                console.log(error)
+                            }
+                        });
+                    } else {
+                        revertFunc(); // Annuleer de actie als de gebruiker de bevestiging heeft geannuleerd
+                    }
                 },
 
                 eventClick: function(event) {
                     let id = event.id;
-                    if (confirm('are you sure you want to remove it')) {
+                    if (confirm('Weet je zeker dat je dit evenement wilt verwijderen?')) {
                         $.ajax({
                             url: "{{ route('calendar.destroy', '') }}" + '/' + id,
                             type: "DELETE",
                             dataType: 'json',
                             success: function(response) {
                                 $('#calendar').fullCalendar('removeEvents', response);
-                                swal("Good job!", "Event Deleted!", "success");
+                                swal("goed Bezig!", "Je evenement is verwijderd!", "success");
                             },
                             error: function(error) {
                                 console.log(error)

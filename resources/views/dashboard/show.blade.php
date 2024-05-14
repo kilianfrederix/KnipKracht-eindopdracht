@@ -4,11 +4,28 @@
 
 @section('content')
     <div class="container">
-        <h1>Boeking Details</h1>
-        <p>Kapper {{ $booking->kapper->naam }}</p>
-        <p>klant {{ $booking->klant->naam }}</p>
-        <p>Titel: {{ $booking->title }}</p>
-        <p>Start Datum: {{ $booking->start_date }}</p>
-        <p>Eind Datum: {{ $booking->end_date }}</p>
+        <div class="booking-content">
+            <h1>Boeking Details</h1>
+            <table class="aanwezige-werknemers-table">
+                <thead>
+                    <tr>
+                        <th>Kapper</th>
+                        <th>Klant</th>
+                        <th>Dienst</th>
+                        <th>start datum</th>
+                        <th>Eind datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="aanwezige-werknemers-row">
+                        <td>{{ $booking->kapper->naam }}</td>
+                        <td>{{ $booking->klant->naam }}</td>
+                        <td>{{ $booking->title }}</td>
+                        <td>{{ $booking->start_date }}</td>
+                        <td>{{ $booking->end_date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection

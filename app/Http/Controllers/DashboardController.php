@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
-use Carbon\Carbon;
 
 class DashboardController extends Controller
 {

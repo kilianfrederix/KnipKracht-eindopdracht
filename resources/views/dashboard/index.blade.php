@@ -32,9 +32,9 @@
                     <tbody>
                         @foreach($bookings as $booking)
                             <tr class="aanwezige-werknemers-row">
-                                <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->kapper->naam }}</a></td>
-                                <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->klant->naam }}</a></td>
-                                <td><a href="{{ route('dashboard.show', $booking->id) }}">{{ $booking->title }}</a></td>
+                                <td><a href="{{ route('dashboard.show', $booking->id) }}" class="info-link">{{ $booking->kapper->naam }}</a></td>
+                                <td><a href="{{ route('dashboard.show', $booking->id) }}" class="info-link">{{ $booking->klant->naam }}</a></td>
+                                <td><a href="{{ route('dashboard.show', $booking->id) }}" class="info-link">{{ $booking->title }}</a></td>
                                 <td>{{ \Carbon\Carbon::parse($booking->start_date)->format('Y-m-d') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($booking->start_date)->format('H:i') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($booking->end_date)->format('Y-m-d') }}</td>

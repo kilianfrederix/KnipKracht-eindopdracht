@@ -759,6 +759,14 @@ body {
     background-color: #f2f2f2;
 }
 
+.fc-time-grid .fc-slats td {
+    background-color: black;
+}
+
+.booking-content {
+    margin-top: 30px;
+}
+
 .button-box {
     display: flex;
     justify-content: space-between;
@@ -767,6 +775,7 @@ body {
 .delete-button {
     background-color: var(--dark-pink-color);
     border: 1px solid var(--light-pink-color);
+    color: var(--light-pink-color);
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     transition: .5s;
@@ -775,12 +784,13 @@ body {
 .delete-button:hover {
     background-color: var(--light-pink-color);
     border: 1px solid var(--dark-pink-color);
+    color: var(--dark-pink-color);
 }
 
 .update-button {
     background-color: var(--dark-pink-color);
     border: 1px solid var(--light-pink-color);
-    color: var(--text-color);
+    color: var(--light-pink-color);
     text-decoration: none;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
@@ -790,6 +800,7 @@ body {
 .update-button:hover {
     background-color: var(--light-pink-color);
     border: 1px solid var(--dark-pink-color);
+    color: var(--dark-pink-color);
 }
 
 .add-button-box {
@@ -803,7 +814,7 @@ body {
 .add-button {
     background-color: var(--dark-pink-color);
     border: 1px solid var(--light-pink-color);
-    color: var(--text-color);
+    color: var(--light-pink-color);
     text-decoration: none;
     border-radius: 10px;
     width: 262px;
@@ -815,8 +826,17 @@ body {
 .add-button:hover {
     background-color: var(--light-pink-color);
     border: 1px solid var(--dark-pink-color);
+    color: var(--dark-pink-color);
 }
 
+.info-link {
+    color: var(--dark-pink-color);
+    text-decoration: none;
+}
+
+.info-link:hover {
+    color: var(--light-pink-color);
+}
 
 
 /* font */
