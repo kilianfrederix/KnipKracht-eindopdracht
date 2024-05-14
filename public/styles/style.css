@@ -171,6 +171,7 @@ body {
     text-align: center;
     flex-direction: column;
     margin-bottom: 20px;
+    margin-left: 15px;
 }
 
 .info-text {
@@ -484,6 +485,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .right-sidebar {
@@ -503,6 +505,7 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .home-afspraak-title {
@@ -650,6 +653,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 .about-werknemer-box {
@@ -754,6 +758,65 @@ body {
 .aanwezige-werknemers-row:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+.button-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-button {
+    background-color: var(--dark-pink-color);
+    border: 1px solid var(--light-pink-color);
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    transition: .5s;
+}
+
+.delete-button:hover {
+    background-color: var(--light-pink-color);
+    border: 1px solid var(--dark-pink-color);
+}
+
+.update-button {
+    background-color: var(--dark-pink-color);
+    border: 1px solid var(--light-pink-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    transition: .5s;
+}
+
+.update-button:hover {
+    background-color: var(--light-pink-color);
+    border: 1px solid var(--dark-pink-color);
+}
+
+.add-button-box {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding-right: 9px;
+}
+
+.add-button {
+    background-color: var(--dark-pink-color);
+    border: 1px solid var(--light-pink-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 10px;
+    width: 262px;
+    height: 35px;
+    padding: 5px 10px 5px 10px;
+    transition: .5s;
+}
+
+.add-button:hover {
+    background-color: var(--light-pink-color);
+    border: 1px solid var(--dark-pink-color);
+}
+
 
 
 /* font */

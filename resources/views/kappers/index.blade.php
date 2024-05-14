@@ -16,11 +16,13 @@
                 </ul>
             </div>
                 <div class="dashboard-content">
-                <h1>Alle Kappers</h1>
-                @if(session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                @endif
-                <a href="{{ route('kappers.create') }}" class="btn btn-primary">Nieuwe Kapper Toevoegen</a>
+                <div class="add-button-box">
+                    <h1>Alle Kappers</h1>
+                    @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
+                    <a href="{{ route('kappers.create') }}" class="add-button">Nieuwe Kapper Toevoegen</a>
+                </div>
                 <table class="aanwezige-werknemers-table">
                     <thead>
                         <tr>
@@ -36,12 +38,12 @@
                             <td>{{ $kapper->naam }}</td>
                             <td>{{ $kapper->email }}</td>
                             <td>{{ $kapper->nummer }}</td>
-                            <td>
-                                <a href="{{ route('kappers.edit', $kapper->id) }}" class="btn btn-primary">Bewerken</a>
+                            <td class="button-box">
+                                <a href="{{ route('kappers.edit', $kapper->id) }}" class="update-button">Bewerken</a>
                                 <form action="{{ route('kappers.destroy', $kapper->id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze kapper wilt verwijderen?')">Verwijderen</button>
+                                    <button type="submit" class="delete-button" onclick="return confirm('Weet je zeker dat je deze kapper wilt verwijderen?')">Verwijderen</button>
                                 </form>
                             </td>
                         </tr>

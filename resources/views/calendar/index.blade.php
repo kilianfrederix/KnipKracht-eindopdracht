@@ -131,17 +131,17 @@
             </div>
         </div>
     </div>
-    <footer class="dashboard-main-footer">
-        <div class="dashboard-footer-content">
-            <div class="dashboard-footer-grid">
-                <div class="dashboard-footer-content-left">
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-content-left">
                     <a class="nav-links @if (Request::is('/')) active @endif"
                         href="{{ route('home') }}">Home</a>
                     <a class="nav-links @if (Request::is('about')) active @endif"
                         href="{{ route('about') }}">About us</a>
                 </div>
-                <div class="dashboard-footer-content-middle"></div>
-                <div class="dashboard-footer-content-right">
+                <div class="footer-content-middle"></div>
+                <div class="footer-content-right">
                     @auth
                         @if (Auth::user()->is_employee)
                             <h2><a class="nav-links-hidden" href="{{ route('logout') }}">Welcome
