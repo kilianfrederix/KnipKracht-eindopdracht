@@ -44,9 +44,6 @@
                     </div>
                 </div>
             </form>
-            <p>
-                Heb je nog geen account?<a class="nav-link" href="{{ route('register.get') }}"> Registreren</a>
-            </p>
         </div>
     </section>
 </body>
