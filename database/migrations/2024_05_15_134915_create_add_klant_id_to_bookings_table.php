@@ -15,7 +15,7 @@ class AddCustomerIdToBookingsTable extends Migration
     {
         Schema::table('bookings', function (Blueprint $table) {
             $table->unsignedBigInteger('klant_id')->nullable();
-            $table->foreign('klant_id')->references('id')->on('customers')->onDelete('set null');
+            $table->foreign('klant_id')->references('id')->on('klants')->onDelete('set null');
         });
     }
 
