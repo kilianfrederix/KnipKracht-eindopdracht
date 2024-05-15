@@ -22,10 +22,8 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        $user = User::where('username', $validated['username'])->first();
-
-        if ($user && password_verify($validated['password'], $user->password)) {
-            if ($user->is_employee) {
+        if (Auth::attempt($validated)) {
+            if (Auth::user()->is_employee) {
                 // Als de gebruiker een werknemer is, stuur ze naar het dashboard voor werknemers
                 return redirect()->route('employee.dashboard');
             } else {
@@ -38,7 +36,6 @@ class AuthController extends Controller
             'username' => ['De ingevoerde gegevens komen niet overeen met de opgeslagen gegevens.'],
         ]);
     }
-
 
     public function register()
     {
