@@ -82,6 +82,23 @@ body {
     color: var(--error-color);
 }
 
+.form-title {
+    margin-top: 30px;
+}
+
+.form-group {
+    width: 500px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .dashboard-footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
