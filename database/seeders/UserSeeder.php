@@ -18,28 +18,28 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Susie',
                 'email' => 'SusieKnipKracht@gmail.com',
-                'password' => 'susie',
+                'password' => 'test',
                 'username' => 'Susie',
                 'is_employee' => 1,
             ],
             [
                 'name' => 'Michelle',
                 'email' => 'MichelleKnipKracht@gmail.com',
-                'password' => 'michelle',
+                'password' => 'test',
                 'username' => 'Michelle',
                 'is_employee' => 1,
             ],
             [
                 'name' => 'Vicky',
                 'email' => 'VickyKnipKracht@gmail.com',
-                'password' => 'vicky',
+                'password' => 'test',
                 'username' => 'Vicky',
                 'is_employee' => 1,
             ],
             [
                 'name' => 'Ocean',
                 'email' => 'OceanKnipKracht@gmail.com',
-                'password' => 'ocean',
+                'password' => 'test',
                 'username' => 'Ocean',
                 'is_employee' => 1,
             ]
