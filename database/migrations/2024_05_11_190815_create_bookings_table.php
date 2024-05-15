@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->foreignId('dienst_id');
             $table->foreignId('kapper_id');
+            $table->foreignId('klant_id');
             $table->timestamps();
         });
     }
