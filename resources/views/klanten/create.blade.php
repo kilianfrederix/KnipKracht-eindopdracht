@@ -6,21 +6,70 @@
     <div class="container">
         <h1>Nieuwe Klant Toevoegen</h1>
 
-        <form action="{{ route('klanten.store') }}" method="POST">
+        <form action="{{ route('klanten.store') }}" method="POST" id="klantForm">
             @csrf
             <div class="form-group">
                 <label for="naam">Naam:</label>
-                <input type="text" id="naam" name="naam" class="form-control" required>
+                <div id="naamError" class="form-error"></div> <!-- Error message container -->
+                <input type="text" id="naam" name="naam" class="form-control">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <div id="emailError" class="form-error"></div> <!-- Error message container -->
+                <input type="email" id="email" name="email" class="form-control">
             </div>
             <div class="form-group">
                 <label for="nummer">Telefoonnummer:</label>
-                <input type="text" id="nummer" name="nummer" class="form-control" required>
+                <div id="nummerError" class="form-error"></div> <!-- Error message container -->
+                <input type="text" id="nummer" name="nummer" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Toevoegen</button>
+            <button type="submit" class="btn btn-primary" id="submitButton">Toevoegen</button>
         </form>
     </div>
+    <script>
+        document.getElementById("klantForm").addEventListener("submit", function(event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Reset previous error messages
+            document.getElementById("naamError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("nummerError").innerText = "";
+
+            // Get form inputs
+            var naam = document.getElementById("naam").value;
+            var email = document.getElementById("email").value;
+            var nummer = document.getElementById("nummer").value;
+
+            // Validate naam
+            if (naam.trim() === "") {
+                document.getElementById("naamError").innerText = "Vul alstublieft uw naam in.";
+                return;
+            }
+
+            // Validate email
+            if (email.trim() === "") {
+                document.getElementById("emailError").innerText = "Vul alstublieft uw e-mailadres in.";
+                return;
+            } else if (!isValidEmail(email)) {
+                document.getElementById("emailError").innerText = "Voer alstublieft een geldig e-mailadres in.";
+                return;
+            }
+
+            // Validate nummer
+            if (nummer.trim() === "") {
+                document.getElementById("nummerError").innerText = "Vul alstublieft uw telefoonnummer in.";
+                return;
+            }
+
+            // If inputs are valid, submit the form
+            document.getElementById("klantForm").submit();
+        });
+
+        // Function to validate email using regex
+        function isValidEmail(email) {
+            var regex = /\S+@\S+\.\S+/;
+            return regex.test(email);
+        }
+    </script>
 @endsection

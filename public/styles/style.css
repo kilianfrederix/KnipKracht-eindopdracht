@@ -78,6 +78,10 @@ body {
     width: 100%;
 }
 
+.form-error {
+    color: var(--error-color);
+}
+
 .dashboard-footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -770,7 +774,7 @@ body {
 .button-box {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 .delete-button {
