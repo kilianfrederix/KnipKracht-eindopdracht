@@ -126,11 +126,12 @@
             if (password.trim() === "") {
                 document.getElementById("passwordError").innerText = "Please enter your password.";
                 return;
-            } else if (!isValidPassword(password)) {
-                document.getElementById("passwordError").innerText =
-                    "Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.";
-                return;
             }
+            // else if (!isValidPassword(password)) {
+            //     document.getElementById("passwordError").innerText =
+            //         "Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.";
+            //     return;
+            // }
 
             // Validate password confirmation
             if (password_confirmation.trim() === "") {

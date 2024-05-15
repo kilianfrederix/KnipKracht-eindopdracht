@@ -12,9 +12,6 @@
 <body>
     <section class="form-box poppins-regular">
         <div class="form-content">
-            <div class="auth-nav">
-                <a class="auth-nav-link" href="{{ route('home') }}">Home</a>
-            </div>
             <h2>Login</h2>
             <form action="{{ route('login.post') }}" method="post" id="loginForm">
                 @csrf
@@ -40,14 +37,30 @@
                         </div>
                         <input class="form-input" type="password" name="password" id="password">
                     </div>
-
                     <div class="button-box">
                         <input class="submit-button" type="submit" value="Login" id="submitButton">
+                        <a class="auth-nav-link" href="{{ route('home') }}">back</a>
                     </div>
                 </div>
             </form>
+            <div class="demo-box">
+                <p>Demonstratie inlog gegevens</p>
+                <div class="gebruikers">
+                    <div class="gebruiker">
+                        <p>gebruiker 1</p>
+                        <p>username: Susie</p>
+                        <p>Password: test</p>
+                    </div>
+                    <div class="gebruiker">
+                        <p>gebruiker 2</p>
+                        <p>username: michelle</p>
+                        <p>password: test</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             // Prevent form submission
